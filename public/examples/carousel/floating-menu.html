@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Carousel Template Sample</title>
+    
+    <link rel="stylesheet" href="../../assets/css/imports.css" media="screen">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" media="screen">
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<!-- NAVBAR
+================================================== -->
+  <body class="float-navbar">
+
+    <div class="navbar-wrapper container">
+      <div class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a href="./../index.html" class="navbar-brand">Sample Carousel</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="#">Sample</a>
+              </li>
+              <li>
+                <a href="#">Example</a>
+              </li>
+              <li>
+                <a href="#">Prototype</a>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../index.html">Main Demo</a></li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="header">
+
+      <!-- Carousel
+      ================================================== -->
+      <div id="sampleCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#sampleCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#sampleCarousel" data-slide-to="1"></li>
+          <li data-target="#sampleCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active" style="background: #eee url(http://placekitten.com/1350/650) no-repeat 50% 50%; background-size: cover;">
+            <div class="carousel-caption">
+              <div class="container">
+                <h1>Example headline.</h1>
+                <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="item" style="background: #eee url(http://placekitten.com/1200/500) no-repeat 50% 50%; background-size: cover;">
+            <div class="carousel-caption">
+              <div class="container">
+                <h1>Another example headline.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="item" style="background: #eee url(http://placekitten.com/g/1600/500) no-repeat 50% 50%; background-size: cover;">
+            <div class="carousel-caption">
+              <div class="container">
+                <h1>One more for good measure.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <div class="container">
+            <a class="left carousel-control" href="#sampleCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+            <a class="right carousel-control" href="#sampleCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+          </div>
+        </div>
+      </div><!-- /.carousel -->
+
+    </section>
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Floating Navigation</h2>
+          <p>Adding the class <code>&lt;body class="float-navbar"&gt;</code> produces a navigation overlaying the content at the top of the page.</p>
+          <p>Combining this with an extra <code>&lt;div class="container"&gt;</code> wrapper and a navigation class of <code>&lt;div class="navbar navbar-static-top"&gt;</code> stops the navigation from stretching full width and makes a cool looking, free floating navigation bar.</p>
+<pre>
+&lt;body class="float-navbar"&gt;
+
+  &lt;div class="navbar-wrapper"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="navbar navbar-static-top" role="navigation"&gt;
+        &lt;div class="container"&gt;
+          &lt;div class="navbar-header"&gt;
+            &lt;a href="./../index.html" class="navbar-brand"&gt;Template&lt;/a&gt;
+            &lt;button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main"&gt;
+              &lt;span class="icon-bar"&gt;&lt;/span&gt;
+              &lt;span class="icon-bar"&gt;&lt;/span&gt;
+              &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+          &lt;div class="navbar-collapse collapse" id="navbar-main"&gt;
+            &lt;ul class="nav navbar-nav"&gt;
+              &lt;li&gt;
+                &lt;a href="#"&gt;Sample&lt;/a&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;a href="#"&gt;Example&lt;/a&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+...
+</pre>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <img src="http://placekitten.com/g/500/500" class="featurette-image img-responsive" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-5">
+          <img src="http://placekitten.com/g/500/500" class="featurette-image img-responsive" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <img src="http://placekitten.com/g/500/500" class="featurette-image img-responsive" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <!-- <script src="../../assets/js/docs.min.js"></script> -->
+
+  </body>
+</html>
