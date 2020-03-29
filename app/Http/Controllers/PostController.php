@@ -217,15 +217,37 @@ class PostController extends Controller
         $post->specifications = $req->specifications ?? null;
         $post->posted_at = Carbon::createFromFormat('Y-m-d H:i', $_POST['date'] . ' ' . $_POST['time']);
 
-        $post->save();
+        $countries =  self::$countries;
 
-        $post->categories()->sync($req->categories);
+        session([
+            'post' => $post, 
+            'categories' => $req->categories
+        ]);
         
-        return redirect()->route('home')->with('success', "your have add new post !");
+        return view('posts.preview', [
+            'countries' => $countries,
+            'post' => $post, 
+            'categories' => $req->categories
+        ]);
       
-        //return back()->with('success', "Post added successfully !");
     }
 
+    
+    function saveAction() {
+        $post = session('post');
+        $categories = session('categories');
+        $post->save();
+        $post->categories()->sync($categories);
+        return redirect()->route('home')->with('success', "your have add new post !");
+    }
+    
+    function cancelAction() {
+        session([
+            'post' => null, 
+            'categories' => null
+        ]);
+        return redirect('posts/publicity');
+    }
 
     public function detail($id) {
         $post = Post::find($id);

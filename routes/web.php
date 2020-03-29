@@ -25,32 +25,25 @@ Route::get('/register', 'FrontEndController@register');
 Route::post('/login', 'FrontEndController@login');
 Route::post('/register', 'FrontEndController@register');
 
-
-
 Route::group(['prefix' => 'posts', 'middleware' => 'check-auth'], function() {
-Route::get('add/{listing?}', 'PostController@add');
-Route::post('add/{listing?}', 'PostController@addAction');
-
-
-
-
-
-//autre end point
-Route::get('/sale', 'PostController@addSale');
-Route::post('/sale','PostController@addAction');
-
-Route::get('/publicity', 'PostController@addPublicity');
-Route::post('/publicity','PostController@addAction');
-
-Route::get('/event', 'PostController@addEvents');
-Route::post('/event','PostController@addAction');
-
-
-
 
     
+    Route::get('/save', 'PostController@saveAction');
+    Route::get('/cancel', 'PostController@cancelAction');
+    
+    Route::get('add/{listing?}', 'PostController@add');
+    Route::post('add/{listing?}', 'PostController@addAction');
 
 
+    //autre end point
+    Route::get('/sale', 'PostController@addSale');
+    Route::post('/sale','PostController@addAction');
+
+    Route::get('/publicity', 'PostController@addPublicity');
+    Route::post('/publicity','PostController@addAction');
+
+    Route::get('/event', 'PostController@addEvents');
+    Route::post('/event','PostController@addAction');
 
 });
 
