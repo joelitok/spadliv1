@@ -24,6 +24,7 @@ class Category extends Model
     /**
      * Get the category that owns this category.
      */
+    
     public function childs()
     {
         return $this->hasMany(Category::class, 'parent_id');
