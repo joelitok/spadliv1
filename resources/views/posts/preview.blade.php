@@ -243,230 +243,160 @@ img.emoji {
 <main id="main" class="site-main" role="main">
 <article id="post-2277" class="post-2277 page type-page status-publish hentry no-feature-image">
 <div class="entry-content">
-
-@if ($message = Session::get('success')) 
-	<div class="alert alert-success">{{ $message }}</div>   
-@endif
-
-@if ($message = Session::get('error')) 
-	<div class="alert alert-danger">{{ $message }}</div>   
-@endif
-
-@if($errors->all()) 
-	<div class="alert alert-danger">
-		<h4>Your form contains errors:</h4>
-		<p>
-			<ul>
-				@foreach ($errors->all() as $error)
-					<li>{{ $error }}</li>
-				@endforeach
-			</ul>
-		</p>
-	</div>
-@endif
-
 <form action="#" method="post" class="adverts-form adverts-form-aligned" enctype="multipart/form-data"> <!--  action="/new/postad_action.php"  -->
-    @csrf
+@csrf
 <fieldset>
 <div class="adverts-control-group adverts-field-header adverts-field-name-_item_information ">
 <div class="adverts-field-header">
-    <div>
-        <label class="radio-inline classibox_ad_specifications seperated">
-          <input type="radio" name="listing"  value="personal" link-data="add"  checked="checked" class="switch-form" value='personal'>Personal
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="listing" value="sales" link-data="sale"  class="switch-form" >Sale   
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="listing" value="events" link-data="event" class="switch-form">Events 
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="listing" value="publicity"  link-data="publicity" class="switch-form">publicity
-        </label>
-    </div>
-<span class="adverts-field-header-title">Item Information</span>
+<span class="adverts-field-header-title"> Preview before submit Information</span>
 </div>
 </div>
 <div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
-<label for="post_title"> le titre est:{{ $post->title}}</label>
-<input type="text" class="design" name="title" maxlength="20" id="post_title"/>
-</div>
-<div class="adverts-control-group adverts-field-select adverts-field-name-advert_category"  required>
-	<label for="advert_category">Category <span class="adverts-form-required">*</span> </label>
 
-<label > </label>
+
+<tr>
+<td>
+
+<label for="post_title" style="font-size:20px"> Le titre est: <span class="adverts-form-required">*</span></label>
+</td>
+
+<td>
+<label for="post_title" style="font-size:20px"> {{$post->title}}   </label>
+
+
+</td>
+</tr>
+
 </div>
+<div class="adverts-control-group adverts-field-select adverts-field-name-advert_category" required>
+	<label for="advert_category"><span class="adverts-form-required">*</span> </label>
+
+
+</div>
+
 <div class="adverts-control-group adverts-field-gallery adverts-field-name-gallery ">
-<label for="gallery">Gallery  </label>
-<input type="file" name="fileToUpload" id="profile-img" class="custom-file-input design">
-</div>
-<!--<div class="adverts-control-group adverts-field-gallery adverts-field-name-gallery ">
-<label for="gallery"> View Images</label>
-       <img  src="" id="profile-img-tag" width="350px"  height="225px" class="design"/>
-</div>-->
-<div class="dropzone-wrapper" style="margin-left: 31%; width: 60%;">
-              <div class="dropzone-desc">
-                <i class="glyphicon glyphicon-download-alt"></i>
-                <p>Choose an image file or drag it here.</p>
-              </div>
-              <input type="file" name="fileToUpload" id="fileToUpload" class="custom-file-input dropzone design" >
-         </div>
+<label for="gallery" style="font-size:20px">votre image est :<span class="adverts-form-required">*</span> </label>
+<label for="gallery"> 
 
-<div class="preview-zone hidden" style="margin-left: 31%;">
-              <div class="box box-solid">
-                <div class="box-header with-border">
-                  <div><b>Preview</b></div>
-                  <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-danger btn-xs remove-preview">
-                      <i class="fa fa-times"></i> Reset This Form
-                    </button>
-                  </div>
-                </div>
-                <div class="box-body"></div>
-              </div>
-            </div>
+<img src="{{ asset('uploads/' . $post->gallery) }}" style= > 
+
+@if($post->gallery)
+{{ $post->gallery}}  
+@endif
+</label>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<input type="file" name="image" id="profile-img" required/><br>  -->
-
-                 <script type="text/javascript">
-                                        function readURL(input) {
-                                            if (input.files && input.files[0]) {
-                                                var reader = new FileReader();
-                                                
-                                                reader.onload = function (e) {
-                                                    $('#profile-img-tag').attr('src', e.target.result);
-                                                }
-                                                reader.readAsDataURL(input.files[0]);
-                                            }
-                                        }
-                                        $("#profile-img").change(function(){
-                                            readURL(this);
-                                        });
-                </script><br>
 
 
            
-               
+<div style="height:50px"> </div>          
 <div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
-<label for="post_title">
-Video Url <span>
-    
-    
-</span>
+
+<tr>
+<td>
+
+<label for="post_title" style="font-size:20px">
+ your Video Url is:<span class="adverts-form-required">*</span>
 </label>
-<input type="text" name="videourl" id="video-url" value="" class="design"/>
+
+</td>
+<td>
+
+<label for="post_title" style="font-size:20px">
+@if($post->video_url)
+{{$post->video_url}}    
+@endif
+</label>
+
+</td>
+
+
+
+</tr>
+
+
+
 </div>
 
+<div style="height:50px"> </div>  
 <div class="adverts-control-group adverts-field-textarea adverts-field-name-post_content ">
-<label for="post_content">Description</label>
-
-<div id="wp-post_content-wrap" class="wp-core-ui wp-editor-wrap tmce-active">
-    <link rel='stylesheet' id='dashicons-css' href='http://classibox.wpbranch.com/wp-includes/css/dashicons.min.css?ver=5.2.3' type='text/css' media='all' />
-<link rel='stylesheet' id='editor-buttons-css' href='assets/css/editor.min.css' type='text/css' media='all' />
-
-<div id="wp-post_content-editor-container" class="wp-editor-container">
-<textarea class="wp-editor-area design" rows="8" autocomplete="off" cols="40" name="post_content" id="post_content"></textarea>
-
+<label for="post_content" style="font-size:20px">Description<span class="adverts-form-required">*</span></label>
+<div id="wp-post_content-editor-container" class="wp-editor-container" style="font-size:20px">
+@if($post->description)
+{{$post->description}}  
+@endif
 </div>
 </div>
 
-</div>
 
+<div style="height:50px"> </div>  
 <div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location ">
-<label for="adverts_location">
-Location <span class="adverts-form-required">*</span> </label>
-<input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="country" class="design" style="width: 20%;" required>
-    <option value="">Country</option>
-    @foreach($countries as $code => $name)
-        <option value="{{ $code }}">{{ $name }}</option>
-    @endforeach
-</select>
+<label for="adverts_location" style="font-size:20px">
+Location: <span class="adverts-form-required">*</span> </label>
+<label style="font-size:20px">
+@if($post->country)
+{{$post->country}}  
+@endif
+</label>
+
+</div>
+<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location" style="width: 31%; margin-right: 15%; float: right; margin-top: -5%;font-size:20px;">
+<label for="">
+@if($post->state)
+{{$post->state}}  
+@endif
+</label>
 </div>
 
-<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location " style="width: 31%; margin-right: 15%; float: right; margin-top: -5%;">
-<input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="state" class="design"  required>
-    <option value="">Province</option>
-    <option value="365 St, WA">365 St, WA</option>
-    <option value="53 W 88th St, US">53 W 88th St, US</option>
-    <option value="Avenue C, US">Avenue C, US</option>
-    <option value="Chicago, US">Chicago, US</option>
-    <option value="Dallas, Washington">Dallas, Washington</option>
-    <option value="Drive Street, US">Drive Street, US</option>
-    <option value="East 7th Street 98">East 7th Street 98</option>
-    <option value="Louis, Missouri, US">Louis, Missouri, US</option>
-</select>
-</div>
-
-<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location " style="width: 32%; float: right; margin-right: -7%; margin-top: -56px;">
-<input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="city" class="design" required>
-    <option value="">City</option>
-    <option value="365 St, WA">365 St, WA</option>
-    <option value="53 W 88th St, US">53 W 88th St, US</option>
-    <option value="Avenue C, US">Avenue C, US</option>
-    <option value="Chicago, US">Chicago, US</option>
-    <option value="Dallas, Washington">Dallas, Washington</option>
-    <option value="Drive Street, US">Drive Street, US</option>
-    <option value="East 7th Street 98">East 7th Street 98</option>
-    <option value="Louis, Missouri, US">Louis, Missouri, US</option>
-</select>
-</div>
-
-<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location">
-    <label> Date <span class="adverts-form-required">*</span></label>
-<input type="date" name="date" id="date" value=""  class="design input-group date"/>
-</div>
-
-<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location ">
-<label>Time <span class="adverts-form-required">*</span></label>
-<input type="time" name="time" id="time" value="" class="design time"/>                                                                
+<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location " style="width: 32%; float: right; margin-right: -7%; margin-top: -56px;font-size:20px;">
+<label for="" >
+@if($post->city)
+{{$post->city}}  
+@endif
+</label>
 </div>
 
 
-<script>
-/*$(document).ready(function() {
-  $('input[name=colorCheckbox]:radio').change(function(e) {
-    let value = e.target.value.trim()
-
-    $('[class^="form"]').css('display', 'none');
-    
-    switch (value) {
-      case 'red':
-        $('.form-a').show()
-        break;
-      case 'green':
-        $('.form-b').show()
-        break;
-      case 'blue':
-        $('.form-c').show()
-        break;
-      default:
-        break;
-    }
-  })
-})*/
-</script>
+<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location" style="font-size:20px;">
+<tr>
+<td >
+<label for="" style="font-size:20px">The date time is<span class="adverts-form-required">*</span></label>
 
 
+</td>
+<td>
+</td>
+<td>
+@if($post->posted_at)
+{{$post->posted_at}}  
+@endif 
+</td>
+</tr>
+                                                             
+</div>
 
-<a href="{{ url('posts/save') }}" style="font-size:1.2em" class="adverts-cancel-unload">Confirmer</a>
-<a href="{{ url('posts/cancel') }}" style="font-size:1.2em" class="adverts-cancel-unload">Cancel</a>
+<!--<button class="btn btn-success" href="{{ url('posts/save') }}"> confirmir </button>
+<button class="btn btn-danger" href="{{ url('posts/cancel') }}"> danger </button>
+ -->
+
+<div>
+
+
+<tr>
+
+<td>
+<a href="{{ url('posts/cancel') }}" style="font-size:1.2em;color:red;font-size:20px" class="adverts-cancel-unload">Cancel</a>
+
+
+
+</td>
+<td>
+<a href="{{ url('posts/save') }}" style="font-size:1.2em;color:green;font-size:20px" class="adverts-cancel-unload">Confirmer</a>
+
+</td>
+</tr>
+
 </div>
 
 </form>
@@ -494,7 +424,7 @@ Location <span class="adverts-form-required">*</span> </label>
 <div class="container">
 <div class="row">
 <div class="col-sm-12">
-<p>© Copyright SPADLI 2018</p>
+<p>© Copyright SPADLI 2020</p>
 </div>
 </div>
 </div>
@@ -901,3 +831,7 @@ $('.remove-preview').on('click', function()
 </script>
 </body>
 </html>
+
+
+
+

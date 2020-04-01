@@ -286,12 +286,18 @@ img.emoji {
 <div class="adverts-control-group adverts-field-select adverts-field-name-advert_category"  required>
 	<label for="advert_category">Category <span class="adverts-form-required">*</span> </label>
 	<select id="advert_category" name="categories[]" class=" adverts-multiselect adverts-max-choices[10] design" multiple="multiple" required>
-    @foreach($categories as $parentName => $childs)
+  {{--  @foreach($categories as $parentName => $childs)
        <option disabled>{{ $parentName }}</option>
        @foreach($childs as $child)
             <option value="{{ $child->id }}" data-depth="1">{{ $child->name }}</option>
        @endforeach
 	@endforeach
+ --}}
+
+
+  @foreach($categories as $num => $name)
+        <option value="{{ $num }}">{{ $name }}</option>
+  @endforeach
 	<!-- <option value="Animals">Animals</option> 
 	<option value="Birds" data-depth="1">Bird</option>
 	<option value="Cat" data-depth="1">Cat</option> bn vn
@@ -370,7 +376,7 @@ img.emoji {
 </div>
 <div class="adverts-control-group adverts-field-gallery adverts-field-name-gallery ">
 <label for="gallery">Gallery  </label>
-<input type="file" name="fileToUpload" id="profile-img" class="custom-file-input design">
+
 </div>
 <!--<div class="adverts-control-group adverts-field-gallery adverts-field-name-gallery ">
 <label for="gallery"> View Images</label>

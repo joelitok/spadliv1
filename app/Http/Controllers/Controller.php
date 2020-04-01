@@ -11,6 +11,15 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    protected static $categories=[
+        
+            "1"=>"poisson",
+            "2"=>"poule",
+            "3"=>"oiseau",
+            "4"=>"danser",
+            "5"=>"partie",
+            "6"=>"igname"
+    ];
     protected static $countries = [
         "AFG" => "Afghanistan",
         "ALA" => "Åland Islands",

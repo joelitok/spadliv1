@@ -14,11 +14,13 @@ class PostController extends Controller
 {
 
     function add($listing='personal'){
-        $categories = [];
+  /*      $categories = [];
         $categoriesParent = Category::whereNull('parent_id')->get();
         foreach($categoriesParent as $parent) {
             $categories[ $parent->name ] = $parent->childs;
         }
+*/
+        $categories=self::$categories;
         $countries =  self::$countries;
 
         switch ($listing) {
@@ -47,11 +49,12 @@ class PostController extends Controller
 
 
     function addSale($listing='sale'){
-        $categories = [];
+        /*$categories = [];
         $categoriesParent = Category::whereNull('parent_id')->get();
         foreach($categoriesParent as $parent) {
             $categories[ $parent->name ] = $parent->childs;
-        }
+        }*/
+        $categories=self::$categories;
         $countries =  self::$countries;
 
         switch ($listing) {
@@ -77,11 +80,12 @@ class PostController extends Controller
 
 
     function addPublicity($listing='publicity'){
-        $categories = [];
+        /*$categories = [];
         $categoriesParent = Category::whereNull('parent_id')->get();
         foreach($categoriesParent as $parent) {
             $categories[ $parent->name ] = $parent->childs;
-        }
+        }*/
+        $categories=self::$categories;
         $countries =  self::$countries;
 
         switch ($listing) {
@@ -107,11 +111,14 @@ class PostController extends Controller
 
 
     function addEvents($listing='events'){
-        $categories = [];
+        
+        /*$categories = [];
         $categoriesParent = Category::whereNull('parent_id')->get();
         foreach($categoriesParent as $parent) {
             $categories[ $parent->name ] = $parent->childs;
-        }
+        } */
+
+        $categories=self::$categories;
         $countries =  self::$countries;
 
         switch ($listing) {
@@ -135,44 +142,6 @@ class PostController extends Controller
         return view("posts.$view", compact('categories', 'countries'));
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     function addAction(Request $req) {
         $req->validate([
             'title' => 'required',
@@ -183,8 +152,8 @@ class PostController extends Controller
             'country' => 'required|size:3',
             'state' => 'required',
             'city' => 'required',
-            'date' => 'required|date',
-            'time' => 'required',
+            //'date' => 'required|date',
+           // 'time' => 'required',
             'fileToUpload' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ]);
 
@@ -215,8 +184,7 @@ class PostController extends Controller
         $post->condition = $req->condition ?? null;
         $post->short_description = $req->short_description ?? null;
         $post->specifications = $req->specifications ?? null;
-        $post->posted_at = Carbon::createFromFormat('Y-m-d H:i', $_POST['date'] . ' ' . $_POST['time']);
-
+        $post->posted_at = $req->date_create;//Carbon::createFromFormat('Y-m-d H:i', $_POST['date'] .' ' . $_POST['time']);
         $countries =  self::$countries;
 
         session([
@@ -231,6 +199,20 @@ class PostController extends Controller
         ]);
       
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
     function saveAction() {
