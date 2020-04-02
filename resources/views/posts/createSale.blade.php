@@ -235,7 +235,7 @@ img.emoji {
 <main id="main" class="site-main" role="main">
 <article id="post-2277" class="post-2277 page type-page status-publish hentry no-feature-image">
 <div class="entry-content">
-
+{{--
 @if ($message = Session::get('success')) 
 	<div class="alert alert-success">{{ $message }}</div>   
 @endif
@@ -256,6 +256,7 @@ img.emoji {
 		</p>
 	</div>
 @endif
+ --}}
 
 <form action="#" method="post" class="adverts-form adverts-form-aligned" enctype="multipart/form-data"> <!--  action="/new/postad_action.php"  -->
     @csrf
@@ -273,7 +274,7 @@ img.emoji {
           <input type="radio" name="listing" value="events" link-data="event" class="switch-form">Events 
         </label>
         <label class="radio-inline">
-          <input type="radio" name="listing" value="publicity"  link-data="event" class="switch-form">publicity
+          <input type="radio" name="listing" value="publicity"  link-data="publicity" class="switch-form">publicity
         </label>
     </div>
 <span class="adverts-field-header-title">Item Information</span>
@@ -283,9 +284,28 @@ img.emoji {
 <label for="post_title">Title</label>
 <input type="text" class="design" name="title" maxlength="20" id="post_title"/>
 </div>
+
+<div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
+{!! $errors->first('categories', '<div  class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;max-witdh:50px;
+font-size:20px;
+text-align:center; 
+ position: absolute;
+  right: 0px;
+  width: 350px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+" class="invalid-feedback">:message</div>') !!}
+
+</div>
+
 <div class="adverts-control-group adverts-field-select adverts-field-name-advert_category"  required>
 	<label for="advert_category">Category <span class="adverts-form-required">*</span> </label>
-	<select id="advert_category" name="categories[]" class=" adverts-multiselect adverts-max-choices[10] design" multiple="multiple" required>
+	<select id="advert_category" name="categories[]" 
+  class=" adverts-multiselect adverts-max-choices[10]
+   design form-control {{ $errors->has('categories') ? 'is-invalid' : '' }}" 
+   multiple="multiple">
   {{--  @foreach($categories as $parentName => $childs)
        <option disabled>{{ $parentName }}</option>
        @foreach($childs as $child)
@@ -354,17 +374,50 @@ Video Url <span>
 </div>
 
 
+<div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
+{!! $errors->first('price', '<div  class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;max-witdh:50px;
+font-size:20px;
+text-align:center; 
+position: absolute;
+right: 0px;
+width: 350px;
+border: 3px solid #73AD21;
+padding: 10px;
+"class="invalid-feedback">:message</div>') !!}
+
+</div>
+
 
 <div class="adverts-control-group adverts-field-text adverts-field-name-adverts_price ">
 <label for="adverts_price">
 Price <span class="adverts-form-required">*</span> </label>
- <input type="text" name="adverts_price" id="adverts_price" class="adverts-filter-money design" required />
+ <input type="text" name="adverts_price" id="adverts_price" class="adverts-filter-money design"  class="form-control {{ $errors->has('price') ? 'is-invalid' : '' }}"  required/>
 </div>
 
-<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location "> 
+<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location">
+{!! $errors->first('currency', 
+'<div class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;max-witdh:50px;
+font-size:20px;
+text-align:center; 
+position: absolute;
+right: 0px;
+width: 350px;
+border: 3px solid #73AD21;
+padding: 10px;
+" class="invalid-feedback">:message
+</div>') 
+!!}
+
+</div>
+
+<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location"> 
 <label for="adverts_location"> Currency Type <span class="adverts-form-required">*</span> </label>
 <input type="hidden" name="adverts_location" id="adverts_location"  /> 
-<select id="currency" name="currency" class="design" required> 
+<select id="currency" name="currency" class="design form-control {{ $errors->has('currency') ? 'is-invalid' : '' }}"  required> 
 <option value="">&nbsp;</option> 
 <option value="ALL">Albania Lek</option> 
 <option value="AFN">Afghanistan Afghani</option> 
@@ -379,8 +432,10 @@ Price <span class="adverts-form-required">*</span> </label>
 <option value="BMD">Bermuda Dollar</option>
  <option value="BOB">Bolivia Bolíviano</option> 
  <option value="BAM">Bosnia and Herzegovina Convertible Marka</option> 
- <option value="BWP">Botswana Pula</option> <option value="BGN">Bulgaria Lev</option> 
- <option value="BRL">Brazil Real</option> <option value="BND">Brunei Darussalam Dollar</option>
+ <option value="BWP">Botswana Pula</option> 
+ <option value="BGN">Bulgaria Lev</option> 
+ <option value="BRL">Brazil Real</option>
+  <option value="BND">Brunei Darussalam Dollar</option>
  <option value="KHR">Cambodia Riel</option> 
  <option value="CAD">Canada Dollar</option>
  <option value="KYD">Cayman Islands Dollar</option> 
@@ -481,12 +536,29 @@ Price <span class="adverts-form-required">*</span> </label>
 <label for="classibox_ad_brand">Brand  </label>
 <input type="text" name="classibox_ad_brand" id="classibox_ad_brand" class="design" />
 </div>
+
+
+<div class="adverts-control-group adverts-field-text adverts-field-name-adverts_price ">
+{!! $errors->first('condition', '<div  class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;font-size:20px;
+  text-align:center; 
+ position: absolute;
+  right: 0px;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;" 
+  class="invalid-feedback"> :message</div>') !!}
+  </div>
+
+
+
 <div class="adverts-control-group adverts-field-select adverts-field-name-classibox_ad_condition ">
 <label for="classibox_ad_condition">
 Condition  <span class="adverts-form-required">*</span>
 </label>
 <input type="hidden" name="classibox_ad_condition" id="classibox_ad_condition"  value="" />
-<select id="classibox_ad_condition" name="classibox_ad_condition" value="" class="design"  required >
+<select id="classibox_ad_condition" name="classibox_ad_condition" value="" class="design"  class="form-control {{ $errors->has('condition') ? 'is-invalid' : '' }}"  required>
     <option value="">&nbsp;</option>
     <option value="New">New</option>
     <option value="Used">Used</option>
@@ -535,19 +607,27 @@ Specifications ( | separated ) </label>
 
 
 
-
-
-
-
-
-
+<div>
+{!! $errors->first('country', '<div  class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;max-witdh:50px;
+font-size:20px;
+text-align:center; 
+position: absolute;
+right: 0px;
+width: 350px;
+border: 3px solid #73AD21;
+padding: 10px;
+"class="invalid-feedback">:message</div>')
+!!}
+</div>
 
 
 <div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location ">
 <label for="adverts_location">
 Location <span class="adverts-form-required">*</span> </label>
-<input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="country" class="design" style="width: 20%;" required>
+<input type="hidden" name="adverts_location" id="adverts_location"/>
+<select id="advert_location" name="country" class="design form-control {{ $errors->has('country') ? 'is-invalid' : '' }}" style="width: 20%;">
     <option value="">Country</option>
     @foreach($countries as $code => $name)
         <option value="{{ $code }}">{{ $name }}</option>
@@ -555,9 +635,23 @@ Location <span class="adverts-form-required">*</span> </label>
 </select>
 </div>
 
+<div>
+{!! $errors->first('state', '<div  class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;max-witdh:50px;
+font-size:20px;
+text-align:center; 
+position: absolute;
+right: 0px;
+width: 350px;
+border: 3px solid #73AD21;
+padding: 10px;
+"class="invalid-feedback">:message</div>')
+!!}
+</div>
 <div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location " style="width: 31%; margin-right: 15%; float: right; margin-top: -5%;">
 <input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="state" class="design"  required>
+<select id="advert_location" name="state" class="design form-control {{ $errors->has('state') ? 'is-invalid' : '' }}">
     <option value="">Province</option>
     <option value="365 St, WA">365 St, WA</option>
     <option value="53 W 88th St, US">53 W 88th St, US</option>
@@ -569,10 +663,23 @@ Location <span class="adverts-form-required">*</span> </label>
     <option value="Louis, Missouri, US">Louis, Missouri, US</option>
 </select>
 </div>
-
+<div>
+{!! $errors->first('city', '<div  class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;max-witdh:50px;
+font-size:20px;
+text-align:center; 
+position: absolute;
+right: 0px;
+width: 350px;
+border: 3px solid #73AD21;
+padding: 10px;
+"class="invalid-feedback">:message</div>')
+!!}
+</div>
 <div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location " style="width: 32%; float: right; margin-right: -7%; margin-top: -56px;">
 <input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="city" class="design" required>
+<select id="advert_location" name="city" class="design form-control {{ $errors->has('state') ? 'is-invalid' : '' }}">
     <option value="">City</option>
     <option value="365 St, WA">365 St, WA</option>
     <option value="53 W 88th St, US">53 W 88th St, US</option>
@@ -584,33 +691,6 @@ Location <span class="adverts-form-required">*</span> </label>
     <option value="Louis, Missouri, US">Louis, Missouri, US</option>
 </select>
 </div>
-
-<script>
-/*$(document).ready(function() {
-  $('input[name=colorCheckbox]:radio').change(function(e) {
-    let value = e.target.value.trim()
-
-    $('[class^="form"]').css('display', 'none');
-    
-    switch (value) {
-      case 'red':
-        $('.form-a').show()
-        break;
-      case 'green':
-        $('.form-b').show()
-        break;
-      case 'blue':
-        $('.form-c').show()
-        break;
-      default:
-        break;
-    }
-  })
-})*/
-</script>
-
-
-
 <input type="submit" name="submit" value="Post" style="font-size:1.2em" class="adverts-cancel-unload"/>
 </div>
 </fieldset>
@@ -633,7 +713,7 @@ Location <span class="adverts-form-required">*</span> </label>
 <div class="container">
 <div class="row">
 <div class="col-sm-12">
-<p>© Copyright SPADLI 2018</p>
+<p>©Copyright SPADLI 2020</p>
 </div>
 </div>
 </div>

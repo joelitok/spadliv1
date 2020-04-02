@@ -220,6 +220,17 @@ img.emoji {
 }
 </style>
 
+
+<script>
+// code javascript pour la validation de mon formulaire
+
+
+
+
+
+
+</script>
+
 <link rel='stylesheet' id='classibox_color-css' href='http://classibox.wpbranch.com/wp-content/themes/classibox/assets/css/color.css?ver=1.0' type='text/css' media='all' />
 <link rel='stylesheet' id='classibox_responsive-css' href='http://classibox.wpbranch.com/wp-content/themes/classibox/assets/css/responsive.css?ver=1.0' type='text/css' media='all' />
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -236,6 +247,7 @@ img.emoji {
 <article id="post-2277" class="post-2277 page type-page status-publish hentry no-feature-image">
 <div class="entry-content">
 
+{{--
 @if ($message = Session::get('success')) 
 	<div class="alert alert-success">{{ $message }}</div>   
 @endif
@@ -256,6 +268,7 @@ img.emoji {
 		</p>
 	</div>
 @endif
+--}}
 
 <form action="#" method="post" class="adverts-form adverts-form-aligned" enctype="multipart/form-data"> <!--  action="/new/postad_action.php"  -->
     @csrf
@@ -264,7 +277,7 @@ img.emoji {
 <div class="adverts-field-header">
     <div>
         <label class="radio-inline classibox_ad_specifications seperated">
-          <input type="radio" name="listing"  value="personal" link-data="personal" class="switch-form" value='personal'>Personal
+          <input type="radio" name="listing"  value="personal" link-data="add" class="switch-form" value='personal'>Personal
         </label>
         <label class="radio-inline">
           <input type="radio" name="listing" value="sales" link-data="sale"  class="switch-form" >Sale   
@@ -280,12 +293,39 @@ img.emoji {
 </div>
 </div>
 <div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
+{!! $errors->first('title', '<div  class="design" 
+style="
+background-color: #FFBABA;
+color: #D8000C;max-witdh:50px;
+font-size:20px;
+text-align:center; 
+position: absolute;
+right: 0px;
+width: 350px;
+border: 3px solid #73AD21;
+padding: 10px;" class="invalid-feedback">:message</div>') !!}
+</div>
+
+<div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
 <label for="post_title">Title</label>
-<input type="text" class="design" name="title" maxlength="20" id="post_title"/>
+<input type="text" class="design" name="title" maxlength="20" id="post_title"  class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}"/>
+</div>
+<div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
+{!! $errors->first('categories', '<div  class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;max-witdh:50px;
+font-size:20px;
+text-align:center; 
+position: absolute;
+right: 0px;
+width: 350px;
+border: 3px solid #73AD21;
+padding: 10px;
+" class="invalid-feedback">:message</div>') !!}
 </div>
 <div class="adverts-control-group adverts-field-select adverts-field-name-advert_category"  required>
 	<label for="advert_category">Category <span class="adverts-form-required">*</span> </label>
-	<select id="advert_category" name="categories[]" class=" adverts-multiselect adverts-max-choices[10] design" multiple="multiple" required>
+	<select id="advert_category" name="categories[]" class=" adverts-multiselect adverts-max-choices[10] design" multiple="multiple" class="form-control {{ $errors->has('categories') ? 'is-invalid' : '' }}">
   {{--  @foreach($categories as $parentName => $childs)
        <option disabled>{{ $parentName }}</option>
        @foreach($childs as $child)
@@ -298,79 +338,7 @@ img.emoji {
   @foreach($categories as $num => $name)
         <option value="{{ $num }}">{{ $name }}</option>
   @endforeach
-	<!-- <option value="Animals">Animals</option> 
-	<option value="Birds" data-depth="1">Bird</option>
-	<option value="Cat" data-depth="1">Cat</option> bn vn
-	<option value="Dog" data-depth="1">Dog</option>
-	<option value="Guinea Pig" data-depth="1">Guinea Pig</option>
-	<option value="Rabbits" data-depth="1">Rabbits</option>
-	<option value="Default">Default</option>
-	<option value="Education">Education</option>
-	<option value="Higher secondary" data-depth="1">Higher secondary</option>
-	<option value="Kindergarten" data-depth="1">Kindergarten</option>
-	<option value="Pre-primary" data-depth="1">Pre-primary</option>
-	<option value="Primary" data-depth="1">Primary</option>
-	<option value="Secondary" data-depth="1">Secondary</option>
-	<option value="Electronics">Electronics</option>
-	<option value="Home Appliances" data-depth="1">Home Appliances</option>
-	<option value="Kitchen Appliances" data-depth="1">Kitchen Appliances</option>
-	<option value="New Arrivals" data-depth="1">New Arrivals</option>
-	<option value="Small Appliances" data-depth="1">Small Appliances</option>
-	<option value="TV" data-depth="1">TV &amp; Entertainment</option>
-	<option value="Fashion">Fashion</option>
-	<option value="Casual" data-depth="1">Casual</option>
-	<option value="Classic" data-depth="1">Classic</option>
-	<option value="Office Wear" data-depth="1">Office Wear</option>
-	<option value="Sports Wear" data-depth="1">Sports Wear</option>
-	<option value="Vintage" data-depth="1">Vintage</option>
-	<option value="Furnitures">Furnitures</option>
-	<option value="Beds" data-depth="1">Beds</option>
-	<option value="Chairs" data-depth="1">Chairs</option>
-	<option value="Dining Table" data-depth="1">Dining Table</option>
-	<option value="Office Chairs" data-depth="1">Office Chairs</option>
-	<option value="Sofas" data-depth="1">Sofas</option>
-	<option value="Jobs">Jobs</option>
-	<option value="Accounting" data-depth="1">Accounting</option>
-	<option value="Administration" data-depth="1">Administration</option>
-	<option value="Creative" data-depth="1">Creative</option>
-	<option value="Education" data-depth="1">Education</option>
-	<option value="Engineering" data-depth="1">Engineering</option>
-	<option value="Laptops">Laptops &amp; PCs</option>
-	<option value="iMac" data-depth="1">iMac</option>
-	<option value="Macbook" data-depth="1">Macbook</option>
-	<option value="Notebook" data-depth="1">Notebook</option>
-	<option value="Traditional Laptops" data-depth="1">Traditional Laptops</option>
-	<option value="Ultrabooks" data-depth="1">Ultrabooks</option>
-	<option value="Matrimony">Matrimony</option>
-	<option value="Mobiles">Mobiles</option>
-	<option value="Apple" data-depth="1">Apple</option>
-	<option value="LG" data-depth="1">LG</option>
-	<option value="One Plus" data-depth="1">One Plus</option>
-	<option value="Samsung" data-depth="1">Samsung</option>
-	<option value="Xiaomi" data-depth="1">Xiaomi</option>
-	<option value="Real Estate">Real Estate</option>
-	<option value="Commercial" data-depth="1">Commercial</option>
-	<option value="Industrial" data-depth="1">Industrial</option>
-	<option value="Land" data-depth="1">Land</option>
-	<option value="Residential" data-depth="1">Residential</option>
-	<option value="Restaurant">Restaurant</option>
-	<option value="Casual dining" data-depth="1">Casual dining</option>
-	<option value="Ethnic" data-depth="1">Ethnic</option>
-	<option value="Fast casual" data-depth="1">Fast casual</option>
-	<option value="Fast food" data-depth="1">Fast food</option>
-	<option value="Premium casual" data-depth="1">Premium casual</option>
-	<option value="Services">Services</option>
-	<option value="Appliance Repair" data-depth="1">Appliance Repair</option>
-	<option value="Clean My Home" data-depth="1">Clean My Home</option>
-	<option value="Gadgets Repair" data-depth="1">Gadgets Repair</option>
-	<option value="Home Shifting" data-depth="1">Home Shifting</option>
-	<option value="Vehicle Rent" data-depth="1">Vehicle Rent</option>
-	<option value="Vehicle">Vehicle</option>
-	<option value="Crossover" data-depth="1">Crossover</option>
-	<option value="Hatchback" data-depth="1">Hatchback</option>
-	<option value="Minivan" data-depth="1">Minivan</option>
-	<option value="Sedan" data-depth="1">Sedan</option>
-	<option value="Truck" data-depth="1">Truck</option> -->
+	
 </select>
 
 </div>
@@ -378,11 +346,7 @@ img.emoji {
 <label for="gallery">Gallery  </label>
 
 </div>
-<!--<div class="adverts-control-group adverts-field-gallery adverts-field-name-gallery ">
-<label for="gallery"> View Images</label>
-       <img  src="" id="profile-img-tag" width="350px"  height="225px" class="design"/>
-</div>
--->
+
 
 
 <div class="dropzone-wrapper design" style="margin-left: 31%; width: 60%;">
@@ -410,27 +374,6 @@ img.emoji {
 
 
 
-
-<!--<input type="file" name="image" id="profile-img" required/><br>  -->
-
-                 <script type="text/javascript">
-                                        function readURL(input) {
-                                            if (input.files && input.files[0]) {
-                                                var reader = new FileReader();
-                                                
-                                                reader.onload = function (e) {
-                                                    $('#profile-img-tag').attr('src', e.target.result);
-                                                }
-                                                reader.readAsDataURL(input.files[0]);
-                                            }
-                                        }
-                                        $("#profile-img").change(function(){
-                                            readURL(this);
-                                        });
-                </script><br>
-
-
-           
                
 <div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
 <label for="post_title">
@@ -457,21 +400,47 @@ Video Url <span>
 
 </div>
 
+<div class="design"> 
+{!! $errors->first('country', '<div  class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;max-witdh:50px;
+font-size:20px;
+position: absolute;
+  right: 0px;
+  width: 350px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+" class="invalid-feedback">:message
+</div>') !!}
+</div>
 <div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location ">
 <label for="adverts_location">
 Location <span class="adverts-form-required">*</span> </label>
 <input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="country" class="design" style="width: 20%;" required>
+<select id="advert_location" name="country" class="design form-control {{ $errors->has('city') ? 'is-invalid' : '' }}" style="width: 20%;">
+
     <option value="">Country</option>
     @foreach($countries as $code => $name)
         <option value="{{ $code }}">{{ $name }}</option>
     @endforeach
 </select>
 </div>
-
-<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location " style="width: 31%; margin-right: 15%; float: right; margin-top: -5%;">
+<div class="design"> 
+{!! $errors->first('state', '<div  class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;max-witdh:50px;
+font-size:20px;
+position: absolute;
+  right: 0px;
+  width: 350px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+" class="invalid-feedback">:message
+</div>') !!}
+</div>
+<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location form-control {{ $errors->has('state') ? 'is-invalid' : '' }}" style="width: 31%; margin-right: 15%; float: right; margin-top: -5%;">
 <input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="state" class="design"  required>
+<select id="advert_location" name="state" class="design form-control {{ $errors->has('state') ? 'is-invalid' : '' }}">
     <option value="">Province</option>
     <option value="365 St, WA">365 St, WA</option>
     <option value="53 W 88th St, US">53 W 88th St, US</option>
@@ -483,10 +452,22 @@ Location <span class="adverts-form-required">*</span> </label>
     <option value="Louis, Missouri, US">Louis, Missouri, US</option>
 </select>
 </div>
+<div class="design">
+{!! $errors->first('city', '<div  class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;max-witdh:50px;
+font-size:20px;
+position: absolute;
+  right: 0px;
+  width: 350px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+" class="invalid-feedback">:message
+</div>') !!}
 
 <div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location " style="width: 32%; float: right; margin-right: -7%; margin-top: -56px;">
 <input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="city" class="design" required>
+<select id="advert_location" name="city" class="design form-control {{ $errors->has('city') ? 'is-invalid' : '' }}">
     <option value="">City</option>
     <option value="365 St, WA">365 St, WA</option>
     <option value="53 W 88th St, US">53 W 88th St, US</option>
@@ -508,31 +489,6 @@ Location <span class="adverts-form-required">*</span> </label>
 <label>Time <span class="adverts-form-required">*</span></label>
 <input type="time" name="time" id="time" value="" class="design time"/>                                                                
 </div>
-
-
-<script>
-/*$(document).ready(function() {
-  $('input[name=colorCheckbox]:radio').change(function(e) {
-    let value = e.target.value.trim()
-
-    $('[class^="form"]').css('display', 'none');
-    
-    switch (value) {
-      case 'red':
-        $('.form-a').show()
-        break;
-      case 'green':
-        $('.form-b').show()
-        break;
-      case 'blue':
-        $('.form-c').show()
-        break;
-      default:
-        break;
-    }
-  })
-})*/
-</script>
 
 
 
@@ -558,7 +514,7 @@ Location <span class="adverts-form-required">*</span> </label>
 <div class="container">
 <div class="row">
 <div class="col-sm-12">
-<p>© Copyright SPADLI 2018</p>
+<p>© Copyright SPADLI 2020</p>
 </div>
 </div>
 </div>

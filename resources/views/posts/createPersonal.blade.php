@@ -220,6 +220,36 @@ img.emoji {
 }
 </style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <link rel='stylesheet' id='classibox_color-css' href='http://classibox.wpbranch.com/wp-content/themes/classibox/assets/css/color.css?ver=1.0' type='text/css' media='all' />
 <link rel='stylesheet' id='classibox_responsive-css' href='http://classibox.wpbranch.com/wp-content/themes/classibox/assets/css/responsive.css?ver=1.0' type='text/css' media='all' />
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -243,7 +273,7 @@ img.emoji {
 <main id="main" class="site-main" role="main">
 <article id="post-2277" class="post-2277 page type-page status-publish hentry no-feature-image">
 <div class="entry-content">
-
+{{--
 @if ($message = Session::get('success')) 
 	<div class="alert alert-success">{{ $message }}</div>   
 @endif
@@ -265,7 +295,10 @@ img.emoji {
 	</div>
 @endif
 
-<form action="#" method="post" class="adverts-form adverts-form-aligned" enctype="multipart/form-data"> <!--  action="/new/postad_action.php"  -->
+
+--}}
+
+<form action="#" method="post" name="myForm"  class="adverts-form adverts-form-aligned" enctype="multipart/form-data">
     @csrf
 <fieldset>
 <div class="adverts-control-group adverts-field-header adverts-field-name-_item_information ">
@@ -287,13 +320,49 @@ img.emoji {
 <span class="adverts-field-header-title">Item Information</span>
 </div>
 </div>
-<div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
+
+<style> 
+.error{
+text-align:center;
+margin-left:50px;
+}
+</style>
+<div class="adverts-control-group adverts-field-text adverts-field-name-post_title">
+
+{!! $errors->first('title', '<div  class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;font-size:20px;
+  text-align:center; 
+ position: absolute;
+  right: 0px;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;" 
+  class="invalid-feedback"> :message</div>') !!}
+
+</div>
+
+<div class="adverts-control-group adverts-field-text adverts-field-name-post_title">
 <label for="post_title">Title</label>
-<input type="text" class="design" name="title" maxlength="20" id="post_title"/>
+<input type="text" class="design" name="title" maxlength="20" id="post_title"  class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}"/>
+
+</div>
+<div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
+{!! $errors->first('categories', '<div  class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;max-witdh:50px;
+font-size:20px;
+text-align:center; 
+position: absolute;
+right: 0px;
+width: 350px;
+border: 3px solid #73AD21;
+padding: 10px;
+" class="invalid-feedback">:message</div>') !!}
 </div>
 <div class="adverts-control-group adverts-field-select adverts-field-name-advert_category"  required>
 	<label for="advert_category">Category <span class="adverts-form-required">*</span> </label>
-	<select id="advert_category" name="categories[]" class=" adverts-multiselect adverts-max-choices[10] design" multiple="multiple" required>
+	<select id="advert_category" name="categories[]" class="adverts-multiselect adverts-max-choices[10] design form-control {{ $errors->has('categories') ? 'is-invalid' : '' }}" multiple="multiple" required>
 	{{--@foreach($categories as $parentName => $childs)
        <option disabled>{{ $parentName }}</option>
        @foreach($childs as $child)
@@ -309,6 +378,8 @@ img.emoji {
     @endforeach
 	
 </select>
+
+
 
 </div>
 <div class="adverts-control-group adverts-field-gallery adverts-field-name-gallery ">
@@ -346,16 +417,24 @@ Video Url <span>
 </label>
 <input type="text" name="videourl" id="video-url" value="" class="design"/>
 </div>
+<div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
 
-<div class="adverts-control-group adverts-field-textarea adverts-field-name-post_content ">
+</div>
+
+<div class="adverts-control-group adverts-field-textarea adverts-field-name-post_content">
+
+
 <label for="post_content">Description</label>
 
 <div id="wp-post_content-wrap" class="wp-core-ui wp-editor-wrap tmce-active">
     <link rel='stylesheet' id='dashicons-css' href='http://classibox.wpbranch.com/wp-includes/css/dashicons.min.css?ver=5.2.3' type='text/css' media='all' />
+
 <link rel='stylesheet' id='editor-buttons-css' href='assets/css/editor.min.css' type='text/css' media='all' />
 
 <div id="wp-post_content-editor-container" class="wp-editor-container">
-<textarea class="wp-editor-area design" rows="8" autocomplete="off" cols="40" name="post_content" id="post_content"></textarea>
+<textarea class="wp-editor-area design" rows="8" autocomplete="off" cols="40" name="post_content" id="post_content">
+
+</textarea>
 
 </div>
 </div>
@@ -366,17 +445,44 @@ Video Url <span>
 <label for="adverts_location">
 Location <span class="adverts-form-required">*</span> </label>
 <input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="country" class="design" style="width: 20%;" required>
+<div class="design"> 
+{!! $errors->first('country', '<div  class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;max-witdh:50px;
+font-size:20px;
+text-align:center; 
+position: absolute;
+right: 0px;
+width: 350px;
+border: 3px solid #73AD21;
+padding: 10px;
+" class="invalid-feedback">:message</div>') !!}
+</div>
+
+
+<select id="advert_location" name="country" class="design form-control {{ $errors->has('country') ? 'is-invalid' : '' }}" style="width: 20%;">
     <option value="">Country</option>
     @foreach($countries as $code => $name)
         <option value="{{ $code }}">{{ $name }}</option>
     @endforeach
 </select>
 </div>
-
+<div class="design"> 
+{!! $errors->first('state', '<div  class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;max-witdh:50px;
+font-size:20px;
+text-align:center; 
+ position: absolute;
+  right: 0px;
+  width: 350px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+" class="invalid-feedback">:message</div>') !!}
+</div>
 <div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location " style="width: 31%; margin-right: 15%; float: right; margin-top: -5%;">
 <input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="state" class="design"  required>
+<select id="advert_location" name="state" class="design  form-control {{ $errors->has('state') ? 'is-invalid' : '' }}">
     <option value="">Province</option>
     <option value="365 St, WA">365 St, WA</option>
     <option value="53 W 88th St, US">53 W 88th St, US</option>
@@ -389,9 +495,22 @@ Location <span class="adverts-form-required">*</span> </label>
 </select>
 </div>
 
+<div class="design"> 
+{!! $errors->first('city', '<div  class="design" 
+style="background-color: #FFBABA;
+color: #D8000C;max-witdh:50px;
+font-size:20px;
+position: absolute;
+  right: 0px;
+  width: 350px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+" class="invalid-feedback">:message</div>') !!}
+</div>
+
 <div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location " style="width: 32%; float: right; margin-right: -7%; margin-top: -56px;">
 <input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="city" class="design" required>
+<select id="advert_location" name="city" class="design form-control {{ $errors->has('city') ? 'is-invalid' : '' }}">
     <option value="">City</option>
     <option value="365 St, WA">365 St, WA</option>
     <option value="53 W 88th St, US">53 W 88th St, US</option>
@@ -432,7 +551,7 @@ Location <span class="adverts-form-required">*</span> </label>
 <div class="container">
 <div class="row">
 <div class="col-sm-12">
-<p>© Copyright SPADLI 2018</p>
+<p>© Copyright SPADLI 2020</p>
 </div>
 </div>
 </div>

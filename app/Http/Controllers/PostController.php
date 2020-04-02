@@ -145,10 +145,10 @@ class PostController extends Controller
     function addAction(Request $req) {
         $req->validate([
             'title' => 'required',
-            'listing' => 'required|exists:App\Listing,slug',
+            //'listing' => 'required|exists:App\Listing,slug',
             'categories' => 'required',
-            'post_content' => 'required',
-            'videourl' => 'nullable|url',
+           // 'post_content' => 'required',
+           // 'videourl' => 'nullable|url',
             'country' => 'required|size:3',
             'state' => 'required',
             'city' => 'required',
@@ -178,8 +178,8 @@ class PostController extends Controller
         $post->country = $req->country;
         $post->state = $req->state;
         $post->city = $req->city;
-        $post->price = $req->price ?? null;
-        $post->currency = $req->currency ?? null;
+        $post->price = $req->price;
+        $post->currency = $req->currency;
         $post->brand = $req->brand ?? null;
         $post->condition = $req->condition ?? null;
         $post->short_description = $req->short_description ?? null;
