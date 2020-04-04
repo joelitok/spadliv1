@@ -387,10 +387,8 @@ Location: <span class="adverts-form-required">*</span> </label>
 
 <td>
 <a href="{{ url('posts/cancel') }}" style="font-size:1.2em;color:red;font-size:20px" class="adverts-cancel-unload">Cancel</a>
-
-
-
 </td>
+
 <td>
 <a href="{{ url('posts/save') }}" style="font-size:1.2em;color:green;font-size:20px" class="adverts-cancel-unload">Confirmer</a>
 

@@ -246,7 +246,7 @@
 								</div>
 							</article>
 						</div> 
-                           @foreach($posts as $post)
+                           @foreach($posts ?? '' as $post)
                             @if($post->listing_id == $personalListingId)
                                 <div class="col-md-3 col-sm-6 col-xs-12" style="max-height:342px;" data-id="{{ $post->id }}">
                                     <article class="card">

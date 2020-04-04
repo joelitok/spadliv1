@@ -289,29 +289,20 @@ img.emoji {
           <input type="radio" name="listing" value="publicity"  link-data="publicity" class="switch-form">publicity
         </label>
     </div>
-<span class="adverts-field-header-title">Item Information</span>
+<span class="adverts-field-header-title">Event Information</span>
 </div>
 </div>
 <div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
-{!! $errors->first('title', '<div  class="design" 
-style="
-background-color: #FFBABA;
-color: #D8000C;max-witdh:50px;
-font-size:20px;
-text-align:center; 
-position: absolute;
-right: 0px;
-width: 350px;
-border: 3px solid #73AD21;
-padding: 10px;" class="invalid-feedback">:message</div>') !!}
+
 </div>
 
 <div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
 <label for="post_title">Title</label>
-<input type="text" class="design" name="title" maxlength="20" id="post_title"  class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}"/>
+<input type="text" class="design" name="title" maxlength="20" id="post_title"required/>
 </div>
 <div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
-{!! $errors->first('categories', '<div  class="design" 
+
+{{--{!! $errors->first('categories', '<div  class="design" 
 style="background-color: #FFBABA;
 color: #D8000C;max-witdh:50px;
 font-size:20px;
@@ -321,11 +312,13 @@ right: 0px;
 width: 350px;
 border: 3px solid #73AD21;
 padding: 10px;
-" class="invalid-feedback">:message</div>') !!}
+" class="invalid-feedback">:message</div>') !!}  --}}
+
 </div>
 <div class="adverts-control-group adverts-field-select adverts-field-name-advert_category"  required>
 	<label for="advert_category">Category <span class="adverts-form-required">*</span> </label>
-	<select id="advert_category" name="categories[]" class=" adverts-multiselect adverts-max-choices[10] design" multiple="multiple" class="form-control {{ $errors->has('categories') ? 'is-invalid' : '' }}">
+	<select id="advert_category" name="categories" class="design" required> <!-- class="form-control {{ $errors->has('categories') ? 'is-invalid' : '' }}"-->
+  
   {{--  @foreach($categories as $parentName => $childs)
        <option disabled>{{ $parentName }}</option>
        @foreach($childs as $child)
@@ -334,9 +327,9 @@ padding: 10px;
 	@endforeach
  --}}
 
-
-  @foreach($categories as $num => $name)
-        <option value="{{ $num }}">{{ $name }}</option>
+<option value="">categories</option>
+  @foreach($categories as $num=>$name)
+        <option value="{{$num}}">{{ $name }}</option>
   @endforeach
 	
 </select>
@@ -400,47 +393,25 @@ Video Url <span>
 
 </div>
 
-<div class="design"> 
-{!! $errors->first('country', '<div  class="design" 
-style="background-color: #FFBABA;
-color: #D8000C;max-witdh:50px;
-font-size:20px;
-position: absolute;
-  right: 0px;
-  width: 350px;
-  border: 3px solid #73AD21;
-  padding: 10px;
-" class="invalid-feedback">:message
-</div>') !!}
-</div>
+
 <div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location ">
 <label for="adverts_location">
 Location <span class="adverts-form-required">*</span> </label>
-<input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="country" class="design form-control {{ $errors->has('city') ? 'is-invalid' : '' }}" style="width: 20%;">
 
+
+
+
+<select id="advert_location" name="country" class="design" style="width: 20%;">
     <option value="">Country</option>
-    @foreach($countries as $code => $name)
-        <option value="{{ $code }}">{{ $name }}</option>
+    @foreach($countries as  $num =>$name)
+        <option value="{{$num}}">{{ $name }}</option>
     @endforeach
 </select>
 </div>
-<div class="design"> 
-{!! $errors->first('state', '<div  class="design" 
-style="background-color: #FFBABA;
-color: #D8000C;max-witdh:50px;
-font-size:20px;
-position: absolute;
-  right: 0px;
-  width: 350px;
-  border: 3px solid #73AD21;
-  padding: 10px;
-" class="invalid-feedback">:message
-</div>') !!}
-</div>
-<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location form-control {{ $errors->has('state') ? 'is-invalid' : '' }}" style="width: 31%; margin-right: 15%; float: right; margin-top: -5%;">
+
+<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location " style="width: 31%; margin-right: 15%; float: right; margin-top: -5%;">
 <input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="state" class="design form-control {{ $errors->has('state') ? 'is-invalid' : '' }}">
+<select id="advert_location" name="state" class="design" required>
     <option value="">Province</option>
     <option value="365 St, WA">365 St, WA</option>
     <option value="53 W 88th St, US">53 W 88th St, US</option>
@@ -452,22 +423,11 @@ position: absolute;
     <option value="Louis, Missouri, US">Louis, Missouri, US</option>
 </select>
 </div>
-<div class="design">
-{!! $errors->first('city', '<div  class="design" 
-style="background-color: #FFBABA;
-color: #D8000C;max-witdh:50px;
-font-size:20px;
-position: absolute;
-  right: 0px;
-  width: 350px;
-  border: 3px solid #73AD21;
-  padding: 10px;
-" class="invalid-feedback">:message
-</div>') !!}
+
 
 <div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location " style="width: 32%; float: right; margin-right: -7%; margin-top: -56px;">
-<input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="city" class="design form-control {{ $errors->has('city') ? 'is-invalid' : '' }}">
+
+<select id="advert_location" name="city" class="design" required>
     <option value="">City</option>
     <option value="365 St, WA">365 St, WA</option>
     <option value="53 W 88th St, US">53 W 88th St, US</option>

@@ -13,12 +13,12 @@ class Controller extends BaseController
 
     protected static $categories=[
         
-            "1"=>"poisson",
-            "2"=>"poule",
-            "3"=>"oiseau",
-            "4"=>"danser",
-            "5"=>"partie",
-            "6"=>"igname"
+           "1"=>"poisson",
+           "2"=> "poule",
+           "3"=> "oiseau",
+           "4"=> "danser",
+           "5"=> "partie",
+           "6"=> "igname"
     ];
     protected static $countries = [
         "AFG" => "Afghanistan",

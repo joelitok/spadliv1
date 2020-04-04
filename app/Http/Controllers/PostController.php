@@ -220,7 +220,10 @@ class PostController extends Controller
         $categories = session('categories');
         $post->save();
         $post->categories()->sync($categories);
+        //return view('home');
+
         return redirect()->route('home')->with('success', "your have add new post !");
+
     }
     
     function cancelAction() {
