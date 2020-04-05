@@ -4,13 +4,6 @@
 //namespace App\Http\Controllers;
 use Auth;
 
-
-
-
-
-
-
-
 class FrontEndController extends Controller
 {
 function detail(){
