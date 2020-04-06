@@ -5,9 +5,9 @@
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
     <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=0.75"/>
-    <link rel="canonical" href="https://everplaces.com/"/>  
+    <!-- <link rel="canonical" href="https://everplaces.com/"/>  
     <meta property="fb:app_id" content="209213619111441"/>
-    <meta name="apple-itunes-app" content="app-id=472735836">
+    <meta name="apple-itunes-app" content="app-id=472735836"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
 	<link rel="stylesheet" href="{{ asset('assets/css/imports.css') }}" media="screen">

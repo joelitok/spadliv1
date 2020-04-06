@@ -145,15 +145,15 @@ class PostController extends Controller
     function addAction(Request $req) {
         $req->validate([
             'title' => 'required',
-            //'listing' => 'required|exists:App\Listing,slug',
+            'listing' => 'required|exists:App\Listing,slug',
             'categories' => 'required',
-           // 'post_content' => 'required',
-           // 'videourl' => 'nullable|url',
+            'post_content' => 'required',
+            'videourl' => 'nullable|url',
             'country' => 'required|size:3',
             'state' => 'required',
             'city' => 'required',
-            //'date' => 'required|date',
-           // 'time' => 'required',
+            'date' => 'nullable|date',
+            'time' => 'nullable',
             'fileToUpload' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ]);
 
@@ -184,7 +184,9 @@ class PostController extends Controller
         $post->condition = $req->condition ?? null;
         $post->short_description = $req->short_description ?? null;
         $post->specifications = $req->specifications ?? null;
-        $post->posted_at = $req->date_create;//Carbon::createFromFormat('Y-m-d H:i', $_POST['date'] .' ' . $_POST['time']);
+        if ($req->has('date') && $req->has('time')) {
+            $post->posted_at = Carbon::createFromFormat('Y-m-d H:i', $req->date .' ' . $req->time);
+        }
         $countries =  self::$countries;
 
         session([
@@ -218,12 +220,20 @@ class PostController extends Controller
     function saveAction() {
         $post = session('post');
         $categories = session('categories');
-        $post->save();
-        $post->categories()->sync($categories);
-        //return view('home');
 
-        return redirect()->route('home')->with('success', "your have add new post !");
+        session([
+            'post' => null, 
+            'categories' => null
+        ]);
 
+        if ($post && $categories) {
+            $post->save();
+            $post->categories()->sync($categories);
+
+            return redirect()->route('home')->with('success', "your have add new post !");
+    }
+
+        return redirect()->route('home');
     }
     
     function cancelAction() {
@@ -231,7 +241,8 @@ class PostController extends Controller
             'post' => null, 
             'categories' => null
         ]);
-        return redirect('posts/publicity');
+        //return redirect('posts/publicity');
+        return redirect()->back();
     }
 
     public function detail($id) {

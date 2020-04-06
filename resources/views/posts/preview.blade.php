@@ -359,6 +359,7 @@ Location: <span class="adverts-form-required">*</span> </label>
 
 
 <div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location" style="font-size:20px;">
+@if($post->posted_at)
 <tr>
 <td >
 <label for="" style="font-size:20px">The date time is<span class="adverts-form-required">*</span></label>
@@ -368,12 +369,12 @@ Location: <span class="adverts-form-required">*</span> </label>
 <td>
 </td>
 <td>
-@if($post->posted_at)
+
 {{$post->posted_at}}  
-@endif 
 </td>
 </tr>
-                                                             
+@endif 
+                                                        
 </div>
 
 <!--<button class="btn btn-success" href="{{ url('posts/save') }}"> confirmir </button>
