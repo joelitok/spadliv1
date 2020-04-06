@@ -282,7 +282,7 @@ img.emoji {
 </div>
 <div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
 <label for="post_title">Title</label>
-<input type="text" class="design" name="title" maxlength="20" id="post_title"/>
+<input type="text" class="design" name="title" maxlength="50" id="post_title"/>
 </div>
 
 <div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
@@ -375,17 +375,7 @@ Video Url <span>
 
 
 <div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
-{!! $errors->first('price', '<div  class="design" 
-style="background-color: #FFBABA;
-color: #D8000C;max-witdh:50px;
-font-size:20px;
-text-align:center; 
-position: absolute;
-right: 0px;
-width: 350px;
-border: 3px solid #73AD21;
-padding: 10px;
-"class="invalid-feedback">:message</div>') !!}
+
 
 </div>
 
@@ -393,13 +383,13 @@ padding: 10px;
 <div class="adverts-control-group adverts-field-text adverts-field-name-adverts_price ">
 <label for="adverts_price">
 Price <span class="adverts-form-required">*</span> </label>
- <input type="text" name="adverts_price" id="adverts_price" class="adverts-filter-money design"  class="form-control {{ $errors->has('price') ? 'is-invalid' : '' }}"  required/>
+ <input type="text" name="adverts_price" id="adverts_price" class="adverts-filter-money design" maxlength="7" required/>
 </div>
 
 
 <div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location"> 
 <label for="adverts_location"> Currency Type <span class="adverts-form-required">*</span> </label>
-<input type="hidden" name="adverts_location" id="adverts_location"  /> 
+<input type="hidden" name="adverts_location" id="adverts_location" maxlength="50" /> 
 <select id="currency" name="currency" class="design"  required> 
 <option value="">&nbsp;</option> 
 <option value="ALL">Albania Lek</option> 

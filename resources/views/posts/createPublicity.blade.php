@@ -284,7 +284,7 @@ img.emoji {
 </div>
 <div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
 <label for="post_title">Title</label>
-<input type="text" class="design" name="title" maxlength="20" id="post_title" required/>
+<input type="text" class="design" name="title" maxlength="50" id="post_title" required/>
 </div>
 
 <div class="adverts-control-group adverts-field-select adverts-field-name-advert_category"  required>
