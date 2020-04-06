@@ -67,7 +67,7 @@
                                     <div style="margin-top: 5%" class="alert alert-danger">{{ $message }}</div>   
                                 @endif
                                 
-                                @if($errors->all()) 
+                                @if(false && $errors->all()) 
                                     <div style="margin-top: 5%" class="alert alert-danger">
                                         <h4>Your form contains errors:</h4>
                                         <p>
@@ -79,6 +79,7 @@
                                         </p>
                                     </div>
                                 @endif 
+                                
                             
                                 <form name="registration_form" id='registration_form' method="post" class="form-inline" action="{{ url('register') }}" style="margin-top: 5%;">
                                     @csrf
@@ -86,7 +87,7 @@
                                         <div class="form-group col-xs-6">
                                             <label for="first_name" class="sr-only">First Name</label>
                                             <input id="first_name" class="form-control input-group-lg" type="text" name="first_name" title="Enter first name" placeholder="First name" required>
-                                            @if($errors->has('firstname'))
+                                            @if($errors->has('first_name'))
                                                 <div class="error">{{ $message }}</div>
                                             @endif
                                         </div>
