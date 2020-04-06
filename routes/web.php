@@ -26,7 +26,7 @@ Route::post('/login', 'FrontEndController@login');
 Route::post('/register', 'FrontEndController@register');
 
 
-Route::group(['prefix' => 'posts'/*, 'middleware' => 'check-auth'*/], function() {
+Route::group(['prefix' => 'posts', 'middleware' => 'check-auth'], function() {
 
     
     Route::get('/save', 'PostController@saveAction');
