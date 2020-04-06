@@ -48,8 +48,8 @@
                         <!-- Register/Login Tabs-->
                         <div class="reg-options">
                             <ul class="nav nav-tabs">
-                            <li class="active"><a href="#register" data-toggle="tab">Register</a></li>
-                            <li><a href="#login" data-toggle="tab">Login</a></li>
+                            <li class="active"><a href="#register" id="goto-register" data-toggle="tab">Register</a></li>
+                            <li><a href="#login" id="goto-login" data-toggle="tab">Login</a></li>
                             </ul><!--Tabs End-->
                         </div>
                         
@@ -293,5 +293,14 @@
         <script src="{{ asset('js/jquery.appear.min.js') }}"></script>
         <script src="{{ asset('js/jquery.incremental-counter.js') }}"></script>
         <script src="{{ asset('js/script.js') }}"></script>
+        <script>
+        $(document).ready(function() {
+            @if(Request::get('page') == 'register')
+                $("#goto-register").click();
+            @else
+                $("#goto-login").click();
+            @endif
+        });
+        </script>
 	</body>
 </html>
