@@ -162,7 +162,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="social-media">
+								<!--<div class="social-media">
 									<div class="popup-content1">
 										<div class="box1" id="m2">
 											<button class="close">x</button>  
@@ -177,7 +177,7 @@
 												<div class="sharethis-inline-follow-buttons"></div>
 										</div>
 									</div>
-								</div> 
+								</div>  -->
 								</div>
 							</article>
 							
@@ -227,7 +227,7 @@
 									</div>
 								</div>
 	
-							 	<div class="social-media">
+							 <!--	<div class="social-media">
 									<div class="popup-content1">
 										<div class="box1" id="m2">
 											<button class="close">x</button>  
@@ -242,7 +242,7 @@
 												<div class="sharethis-inline-follow-buttons"></div>
 										</div>
 								</div>
-								</div>  
+								</div>  --> 
 								</div>
 							</article>
 						</div> 
@@ -295,7 +295,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="social-media">
+                                        <!--    <div class="social-media">
                                                 <div class="popup-content1">
                                                     <div class="box1" id="m2">
                                                         <button class="close">x</button>  
@@ -310,7 +310,7 @@
                                                         <div class="sharethis-inline-follow-buttons"></div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </article>
                                 </div> 
@@ -368,7 +368,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        <div class="social-media">
+                                      <!--  <div class="social-media">
                                                 <div class="popup-content1">
                                                     <div class="box1" id="m2">
                                                         <button class="close">x</button>  
@@ -383,7 +383,7 @@
                                                             <div class="sharethis-inline-follow-buttons"></div>
                                                     </div>
                                                 </div>
-                                            </div> 
+                                            </div>  -->
                                     
                                         </div>
                                     </article>
@@ -446,7 +446,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                           <div class="social-media">
+                                        <!--   <div class="social-media">
                                                 <div class="popup-content1">
                                                     <div class="box1" id="m2">
                                                         <button class="close">x</button>  
@@ -461,7 +461,7 @@
                                                             <div class="sharethis-inline-follow-buttons"></div>
                                                     </div>
                                                 </div>
-                                            </div> 
+                                            </div>  -->
                                         </div>
                                     </article>
                                 </div>
@@ -522,7 +522,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="social-media">
+                                         <!--    <div class="social-media">
                                                 <div class="popup-content1">
                                                     <div class="box1" id="m2">
                                                         <button class="close">x</button>  
@@ -532,15 +532,15 @@
                                                 </div>
                                             </div>	
 
-                                            <div class="social-media-follow">
+                                           <div class="social-media-follow">
                                                 <div class="popup-content2">
                                                     <div class="box1" id="m2" style="margin-top: -93px;">
                                                         <button class="close">x</button>  
                                                             <div class="sharethis-inline-follow-buttons"></div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            </div>-->
+                                        </div>  
                                     </article>
                                 </div>                                        
                             @endif
@@ -574,10 +574,11 @@
                                 
                             </div>
 						</summary>					
-									<form style="position: fixed;bottom: 0;margin-bottom: 10px;float: left;">
-                                        <fieldset class="form-group">
-                                            <input class="form-control comment-input" id="comment-data" placeholder="Add something about it" name="comment-data" value="">
-                                            <button type="button" style="float: right;" class="add-comment-btn btn-sm btn-success">Add Comment</button>
+								
+                    	<form style="position: fixed;bottom: 0;margin-bottom: 10px;float: left;">
+                        <fieldset class="form-group">
+                            <input class="form-control comment-input" id="comment-data" placeholder="Add something about it" name="comment-data" value="">
+                            <button type="button" style="float: right;" class="add-comment-btn btn-sm btn-success">Add Comment</button>
                                         </fieldset>
                                             
                                     </form>	
@@ -605,7 +606,9 @@
 </div>
 	
 	-->
-	<div id="div-exchange-model" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" style="z-index: 10000;overflow-x: hidden;overflow-y: auto;">
+	<form method="post" action="{{url('/send')}}">
+	{{ csrf_field() }}
+    <div id="div-exchange-model" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" style="z-index: 10000;overflow-x: hidden;overflow-y: auto;">
 	    <div class="modal-content" style="width: 40%; margin: 5% auto;">
 	        <span class="close">x</span>
 	        <section class="featured-destinations" style="background-color:#ffffff;">
@@ -615,7 +618,12 @@
 	        </section>
 	   </div>
 	</div>
+
+
+
+
 	
+
 <div id="report-post-modal" class="modal" tabindex="-1" role="dialog" style="z-index:1000000">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -626,16 +634,21 @@
         </button>
       </div>
       <div class="modal-body">
-        <input type="email" required value="" placeholder="Enter Your Email"/>
-        <input type="text" required value="" placeholder="Enter Your Reason"/>
+      <input type="text" name="name" required value="" placeholder="Enter Your name " style="witdh:100px;height:25px;border-radius:10px;"/>
+        
+        <input type="email" name="email" required value="" placeholder="Enter Your Email " style="witdh:100px;height:25px;border-radius:10px;;margin-top:18px"/>
+        <input type="text"  name="message" required value="" placeholder="Enter Your Reason" style="witdh:100px;height:50px;border-radius:10px;margin-top:18px"/>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Report Post</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Report Post</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> <!--data-dismiss="modal"  -->
       </div>
     </div>
   </div>
 </div>
+
+</form>
+
 		<!-- Footer
 		================================================== -->
 		<footer id="footer">

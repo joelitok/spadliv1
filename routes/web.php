@@ -48,4 +48,9 @@ Route::group(['prefix' => 'posts', 'middleware' => 'check-auth'], function() {
 
 });
 
+Route::get('/test-contact','ContactController@sendingMail');
+
 Route::get('/posts/detail/{id}', 'PostController@detail');
+
+//Route::get('/', 'SendEmailController@index');
+Route::post('/send', 'SendEmailController@send');
