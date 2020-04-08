@@ -250,11 +250,11 @@ img.emoji {
 
 
 
-<link rel='stylesheet' id='classibox_color-css' href='http://classibox.wpbranch.com/wp-content/themes/classibox/assets/css/color.css?ver=1.0' type='text/css' media='all' />
-<link rel='stylesheet' id='classibox_responsive-css' href='http://classibox.wpbranch.com/wp-content/themes/classibox/assets/css/responsive.css?ver=1.0' type='text/css' media='all' />
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<link rel='stylesheet' id='classibox_color-css' href='{{secure_asset("http://classibox.wpbranch.com/wp-content/themes/classibox/assets/css/color.css?ver=1.0")}}' type='text/css' media='all' />
+<link rel='stylesheet' id='classibox_responsive-css' href='{{secure_asset("http://classibox.wpbranch.com/wp-content/themes/classibox/assets/css/responsive.css?ver=1.0")}}' type='text/css' media='all' />
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
 <script type='text/javascript' src='http://classibox.wpbranch.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<link  href="image-croper/cropper.css" rel="stylesheet">
+<link  href="{{secure_asset('image-croper/cropper.css')}}" rel="stylesheet">
 <script src="image-croper/cropper.js"></script>
 
 

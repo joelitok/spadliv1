@@ -31,17 +31,7 @@ class SendMail extends Mailable
     public function build()
     {
        // return $this->view('view.name');
- return $this->from('joelnkouatchet@gmail.com')->subject('New Customer Equiry')->view('emails.comfirmMessage')->with('data', $this->data);
+ return $this->from('joelpnkouatchet@gmail.com')->subject('New Customer Equiry')->view('emails.comfirmMessage')->with('data', $this->data);
     
     }
 }
-/*
-MAIL_MAILER=smtp
-MAIL_HOST=smtp.mailtrap.io
-MAIL_PORT=2525
-MAIL_USERNAME=null
-MAIL_PASSWORD=null
-MAIL_ENCRYPTION=null
-MAIL_FROM_ADDRESS=null
-MAIL_FROM_NAME="${APP_NAME}"
-*/ 

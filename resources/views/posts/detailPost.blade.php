@@ -67,7 +67,7 @@
 
 					
 
-					<nav class="navbar-collapse collapse" id="navbar-main">
+				<!--	<nav class="navbar-collapse collapse" id="navbar-main" class="container-fluid">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown show-on-hover">
 								<a class="dropdown-toggle" data-toggle="dropdown" href="destinations.html">Destinations</a>
@@ -178,7 +178,7 @@
 							<li><a href="blog.html">News &amp; Articles</a></li>
 							<li><a href="page.html">Specials</a></li>
 						</ul>
-					</nav>
+					</nav>  -->
 				</div><!-- /.container-fluid -->
 			</header>
 		</div><!-- /.navbar-wrapper -->
@@ -673,7 +673,7 @@ island territory: Canada, United States of America, Mexico and Greenland.
 
 						<div class="col-xs-12">
 							
-							<span style="color:#999; font-size: 13px;">&copy; 2017 Spadli | Terms of Use and Privacy Policy.</span>
+							<span style="color:#999; font-size: 13px;">&copy; 2020 Spadli | Terms of Use and Privacy Policy.</span>
 						</div>
 					</div>
 				</div>

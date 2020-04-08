@@ -45,6 +45,15 @@
             width:615px;
         }
 	</style>
+ 
+<script>
+var msg = '{{Session::get('alert')}}';
+var exist = '{{Session::has('alert')}}';
+if(exist){
+alert(msg);
+         }        
+</script>
+
 </head>
 <body class="home" style="overflow-x: hidden;">
 <div class="placejs explore explore-main">
