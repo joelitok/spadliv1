@@ -56,6 +56,7 @@ alert(msg);
 
 </head>
 <body class="home" style="overflow-x: hidden;">
+
 <div class="placejs explore explore-main">
 <a href="#" id="js-feedback-btn" class="fixed-feedback-bn">Feedback</a>
 <div id="container">
@@ -65,7 +66,8 @@ alert(msg);
 @if($message = Session::get('success'))
     <div class="alert alert-success">{{ $message }}</div>
 @endif
-    
+
+   <!-- 
 <div class="hdr-wrapper">
         <h2 class="logo-cont">
 			<a href="https://spadli.com/wp-content/uploads/2017/03/Spadli-logobeta-1.png" class="logo-wrapper">
@@ -86,9 +88,42 @@ alert(msg);
             </li>
         </ul>
     </div>
-</header>
+
+
+  -->
+
+
+  <div class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <a href="" class="navbar-brand">Spadli</a> 
+      <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse navHeaderCollapse" style="margin-top:20px">
+      <ul class="nav navbar-nav navbar-right text-center">
+      
+            <li class="nav-el" style="margin-right:5px">
+                <a class="login-btn transparent-btn" href="/">Home</a>
+            </li>&nbsp;
+            <li class="nav-el" style="margin-right:5px">
+                <a class="login-btn transparent-btn" href="auth">Log in</a>
+            </li>&nbsp;
+            <li class="nav-el" style="margin-right:5px">
+                <a id="js-signup-btn" class="signup-btn orange-btn" href="auth">Sign up</a>
+            </li>
+        
+      </ul>
+    </div>
 </div>
-    <div class="explore-search-cont">
+</div>
+
+</header>
+
+</div>
+
+    <div class="explore-search-cont"> 
         <div id="bgslides">
             <ul>
                 <li style="background-image: url(//dj1ec046erlmc.cloudfront.net/i/explore_main/head_1.jpg);display:list-item;"></li>
@@ -98,8 +133,9 @@ alert(msg);
             </ul>
         </div>
         <div class="wrapper">
-            <div class="el headline">
-                <span class="mbreak">Discover</span> Your <a class="cat-link" href="/sleep">Next Destination</a>, <a class="cat-link" href="/food">Flight</a>, <a class="cat-link" href="/food">Hotel</a>, <a class="cat-link" href="/food">Restaurant</a>, <a class="cat-link" href="/play">Store</a></div>
+        <div class="el headline">
+                <span class="mbreak">Discover</span> Your <a class="cat-link" href="/sleep">Next Destination</a>, <a class="cat-link" href="/food">Flight</a>, <a class="cat-link" href="/food">Hotel</a>, <a class="cat-link" href="/food">Restaurant</a>, <a class="cat-link" href="/play">Store</a>
+        </div>
            <p style="color: #f5f7f7;margin-top: -21px;">Have your city, neighborhood and enterprises discovered so it results in a memorable trip for visitors. Let them discover you.” </p>    
 		  		   <iframe scrolling="no" width="" height="215" frameborder="0" src="//www.travelpayouts.com/widgets/1c47fec03373ed0f7f93d34da4a92073.html?v=1848" style="width: 100%; background-color: #00b0dd;"></iframe>
 	  <div class="el search-examples" style="margin-top: 8px;">
@@ -171,6 +207,7 @@ alert(msg);
 										</div>
 									</div>
 								</div>
+                                
 								<!--<div class="social-media">
 									<div class="popup-content1">
 										<div class="box1" id="m2">
