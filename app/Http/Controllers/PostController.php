@@ -200,21 +200,8 @@ class PostController extends Controller
             'categories' => $req->categories
         ]);
       
+
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     
     function saveAction() {
@@ -234,6 +221,7 @@ class PostController extends Controller
     }
 
         return redirect()->route('home');
+        
     }
     
     function cancelAction() {
