@@ -7,6 +7,7 @@ use App\User;
 use App\Post;
 use Validator;
 use App\Listing;
+use App\Category;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,34 @@ class FrontEndController extends Controller
         $personalListingId = Listing::where('slug', 'personal')->value('id');
         $publicityListingId = Listing::where('slug', 'publicity')->value('id');
         $posts = Post::latest()->get();
+        return view('home', compact('salesListingId', 'eventsListingId', 
+                    'personalListingId', 'publicityListingId', 'posts'));
+    }
+
+    function postsByListing($slugListing) {
+        $salesListingId = Listing::where('slug', 'sales')->value('id');
+        $eventsListingId = Listing::where('slug', 'events')->value('id');
+        $personalListingId = Listing::where('slug', 'personal')->value('id');
+        $publicityListingId = Listing::where('slug', 'publicity')->value('id');
+
+        $listingID = Listing::where('slug', $slugListing)->value('id');
+        
+        $posts = Post::where('listing_id', $listingID)->latest()->get();
+        
+        return view('home', compact('salesListingId', 'eventsListingId', 
+                    'personalListingId', 'publicityListingId', 'posts'));
+    }
+
+    function postsByCategory($categorySlug) {
+        $salesListingId = Listing::where('slug', 'sales')->value('id');
+        $eventsListingId = Listing::where('slug', 'events')->value('id');
+        $personalListingId = Listing::where('slug', 'personal')->value('id');
+        $publicityListingId = Listing::where('slug', 'publicity')->value('id');
+        
+        $category = Category::where('slug', $categorySlug)->first();
+
+        $posts = $category->posts()->latest()->get();
+
         return view('home', compact('salesListingId', 'eventsListingId', 
                     'personalListingId', 'publicityListingId', 'posts'));
     }

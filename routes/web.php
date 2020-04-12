@@ -50,7 +50,11 @@ Route::group(['prefix' => 'posts', 'middleware' => 'check-auth'], function() {
 
 Route::get('/test-contact','ContactController@sendingMail');
 
-Route::get('/posts/detail/{id}', 'PostController@detail');
+Route::get('/posts/detail/{id}', 'PostController@detail')->name('post-detail');
+Route::post('/posts/comment/{id}', 'PostController@postComment')->name('post-comment');
+
+Route::get('posts-by-listing/{slug}', 'FrontEndController@postsByListing')->name('posts-by-listing');
+Route::get('posts-by-category/{slug}', 'FrontEndController@postsByCategory')->name('posts-by-category');
 
 //Route::get('/', 'SendEmailController@index');
 Route::post('/send', 'SendEmailController@send');

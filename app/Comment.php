@@ -12,7 +12,7 @@ class Comment extends Model
      *
      * @var array
      */
-    protected $garded = [];
+    protected $guarded = [];
     
     /**
      * Get the user that owns the comment.

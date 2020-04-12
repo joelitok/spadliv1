@@ -11,7 +11,7 @@ class Listing extends Model
      *
      * @var array
      */
-    protected $garded = [];
+    protected $guarded = [];
 
     
     /**

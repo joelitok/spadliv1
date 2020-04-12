@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Post;
 use App\Listing;
+use App\Comment;
 use App\Category;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
@@ -111,7 +112,7 @@ class PostController extends Controller
 
 
     function addEvents($listing='events'){
-        
+
         /*$categories = [];
         $categoriesParent = Category::whereNull('parent_id')->get();
         foreach($categoriesParent as $parent) {
@@ -190,26 +191,26 @@ class PostController extends Controller
         $countries =  self::$countries;
 
         session([
-            'post' => $post, 
+            'post' => $post,
             'categories' => $req->categories
         ]);
-        
+
         return view('posts.preview', [
             'countries' => $countries,
-            'post' => $post, 
+            'post' => $post,
             'categories' => $req->categories
         ]);
-      
+
 
     }
 
-    
+
     function saveAction() {
         $post = session('post');
         $categories = session('categories');
 
         session([
-            'post' => null, 
+            'post' => null,
             'categories' => null
         ]);
 
@@ -221,12 +222,12 @@ class PostController extends Controller
     }
 
         return redirect()->route('home');
-        
+
     }
-    
+
     function cancelAction() {
         session([
-            'post' => null, 
+            'post' => null,
             'categories' => null
         ]);
         //return redirect('posts/publicity');
@@ -240,6 +241,31 @@ class PostController extends Controller
             abort(404);
         }
 
-        return view('posts.detailPost', compact('post'));
+        $posts = Post::/*where('id', '<>', $id)->*/latest()->limit(3)->get();
+
+        $listings = Listing::all();
+        $categories = Category::all();
+
+        return view('posts.detailPost', compact('post', 'posts', 'listings', 'categories'));
     }
+
+    public function postComment(Request $req, $postID) {
+
+        if ( ! Post::find($postID)) {
+            abort(404);
+        }
+
+        $req->validate([
+            'author' => 'required|min:2',
+            'email' => 'required|email',
+            'url' => 'url|nullable',
+            'message' => 'required'
+        ]);
+
+        $data = $req->only('author', 'email', 'url', 'message');
+        $data['post_id'] = $postID;
+        Comment::create($data);
+
+        return redirect()->route('post-detail', [$postID]);
+    } 
 }
