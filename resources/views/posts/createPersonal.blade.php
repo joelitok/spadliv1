@@ -324,14 +324,14 @@ img.emoji {
 
 
 <div class="adverts-control-group adverts-field-text adverts-field-name-post_title">
-<label for="post_title">Title</label>
-<input type="text" class="design" name="title" maxlength="50" id="post_title" required/>
+<label for="post_title"  >Title</label>
+<input type="text" class="design" name="title" maxlength="50" id="post_title" required style="margin-left:300px;width:650px;"/>
 
 </div>
 
 <div class="adverts-control-group adverts-field-select adverts-field-name-advert_category"  required>
 	<label for="advert_category">Category <span class="adverts-form-required">*</span> </label>
-	<select id="advert_category" name="categories" class="design" required>
+	<select id="advert_category" name="categories" class="design" required style="margin-left:260px;width:650px;">
 	{{--@foreach($categories as $parentName => $childs)
        <option disabled>{{ $parentName }}</option>
        @foreach($childs as $child)
@@ -384,7 +384,7 @@ Video Url <span>
     
 </span>
 </label>
-<input type="text" name="videourl" id="video-url" value="" class="design"/>
+<input type="text" name="videourl" id="video-url" value="" class="design" style="margin-left:330px;width:650px;"/>
 </div>
 <div class="adverts-control-group adverts-field-text adverts-field-name-post_title ">
 
@@ -400,7 +400,7 @@ Video Url <span>
 
 <link rel='stylesheet' id='editor-buttons-css' href='assets/css/editor.min.css' type='text/css' media='all' />
 
-<div id="wp-post_content-editor-container" class="wp-editor-container">
+<div id="wp-post_content-editor-container" class="wp-editor-container" style="margin-left:330px;width:650px;margin-top:0 auto">
 <textarea class="wp-editor-area design" rows="8" autocomplete="off" cols="40" name="post_content" id="post_content">
 
 </textarea>
@@ -409,23 +409,23 @@ Video Url <span>
 </div>
 
 </div>
-
-<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location ">
+<div class="row"> 
+<div class="col">
 <label for="adverts_location">
-Location <span class="adverts-form-required">*</span> </label>
-<input type="hidden" name="adverts_location" id="adverts_location" required/>
+Location <span class="adverts-form-required">*</span>
+</label>
 
-<select id="advert_location" name="country" class="design" style="width: 20%;" required>
+ </div>
+
+<div class="col" >
+<select id="advert_location" name="country" class="design" required style="margin-left:70px;witdh:70px">
     <option value="">Country</option>
     @foreach($countries as $code => $name)
         <option value="{{ $code }}">{{ $name }}</option>
     @endforeach
 </select>
-</div>
 
-<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location " style="width: 31%; margin-right: 15%; float: right; margin-top: -5%;">
-<input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="state" class="design" required>
+<select id="advert_location" name="state" class="design" required style="margin-left:70px;witdh:70px">
     <option value="">Province</option>
     <option value="365 St, WA">365 St, WA</option>
     <option value="53 W 88th St, US">53 W 88th St, US</option>
@@ -436,12 +436,8 @@ Location <span class="adverts-form-required">*</span> </label>
     <option value="East 7th Street 98">East 7th Street 98</option>
     <option value="Louis, Missouri, US">Louis, Missouri, US</option>
 </select>
-</div>
 
-
-<div class="adverts-control-group adverts-field-select-location adverts-field-name-adverts_location " style="width: 32%; float: right; margin-right: -7%; margin-top: -56px;">
-<input type="hidden" name="adverts_location" id="adverts_location" required  />
-<select id="advert_location" name="city" class="design" required>
+<select id="advert_location" name="city" class="design" required style="margin-left:50px;max-witdh:100px" >
     <option value="">City</option>
     <option value="365 St, WA">365 St, WA</option>
     <option value="53 W 88th St, US">53 W 88th St, US</option>
@@ -453,8 +449,11 @@ Location <span class="adverts-form-required">*</span> </label>
     <option value="Louis, Missouri, US">Louis, Missouri, US</option>
 </select>
 </div>
+</div>
 
+<div style="margin-left:100px; margin-top:25px;" class="col-sm-12">
 <input type="submit" name="submit" value="Post" style="font-size:1.2em" class="adverts-cancel-unload"/>
+</div>
 </div>
 
 </form>

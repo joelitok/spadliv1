@@ -476,12 +476,12 @@ Location <span class="adverts-form-required">*</span> </label>
 </a>
 
 
-
 <link rel='stylesheet' id='adverts-frontend-css' href='http://classibox.wpbranch.com/wp-content/plugins/wpadverts/assets/css/adverts-frontend.css?ver=1.3.2' type='text/css' media='all' />
 <link rel='stylesheet' id='adverts-icons-animate-css' href='http://classibox.wpbranch.com/wp-content/plugins/wpadverts/assets/css/animation.css?ver=1' type='text/css' media='all' />
 <link rel='stylesheet' id='adverts-payments-frontend-css' href='http://classibox.wpbranch.com/wp-content/plugins/wpadverts/addons/payments/assets/css/payments-frontend.css?ver=1.2.8' type='text/css' media='all' />
 <link rel='stylesheet' id='jcrop-css' href='http://classibox.wpbranch.com/wp-includes/js/jcrop/jquery.Jcrop.min.css?ver=0.9.12' type='text/css' media='all' />
 <link rel='stylesheet' id='adverts-upload-css' href='http://classibox.wpbranch.com/wp-content/plugins/wpadverts/assets/css/adverts-upload.css?ver=1.2.8' type='text/css' media='all' />
+
 
 <script type='text/javascript' src='http://classibox.wpbranch.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.4'></script>
 <script type='text/javascript'>
@@ -547,6 +547,7 @@ var adverts_gallery_lang = {"ajaxurl":"http:\/\/classibox.wpbranch.com\/wp-admin
 var mc4wp_forms_config = [];
 /* ]]> */
 </script>
+
 <script type='text/javascript' src='http://classibox.wpbranch.com/wp-content/plugins/mailchimp-for-wp/assets/js/forms-api.min.js?ver=4.5.3'></script>
 <!--[if lte IE 9]>
 <script type='text/javascript' src='http://classibox.wpbranch.com/wp-content/plugins/mailchimp-for-wp/assets/js/third-party/placeholders.min.js?ver=4.5.3'></script>

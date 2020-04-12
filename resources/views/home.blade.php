@@ -1,129 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Spadli | Home</title>
-    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-    <meta name="description" content=""/>
-    <meta name="viewport" content="width=device-width, initial-scale=0.75"/>
-    <!-- <link rel="canonical" href="https://everplaces.com/"/>  
-    <meta property="fb:app_id" content="209213619111441"/>
-    <meta name="apple-itunes-app" content="app-id=472735836"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-	<link rel="stylesheet" href="{{ asset('assets/css/imports.css') }}" media="screen">
-	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" media="screen">
-	<link rel="stylesheet" href="{{ asset('assets/css/owl-carousel.css') }}" media="screen">
-	<link rel="shortcut icon" type="image/png" href="{{ asset('img/Spadli-logobeta.png') }}"/>
-    <link rel="stylesheet" href="{{ asset('styles/style.css') }}"/>
+	<head>
+		<meta charset="utf-8">
+		<title>spadli</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="{{asset('front/assets/css/imports.css')}}" media="screen">
+		<link rel="stylesheet" href="{{asset('front/assets/css/bootstrap.min.css')}}" media="screen">
+		<link rel="stylesheet" href="{{asset('front/assets/css/owl-carousel.css')}}" media="screen">
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap" rel="stylesheet">
+		
+		
+		
+<link rel="stylesheet" href="{{asset('front/css/style.css')}}" />    
+<link rel="stylesheet" href="{{asset('front/styles/style.css')}}"/>
     <!--[if lt IE 9]>
         <script src="/media/j/html5.js"></script>
     <![endif]-->
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<style>
-	    .heart-clicked{
-            color: blue !important;
-	    }
-	    .heart-unclicked{
-	        margin-top: 2%; margin-left: 2%; color: white; font-size: 14px;
-	    }
-	    .show-modal{
-	        display: block !important;
-	    }
-	    .overflow-hidden{
-	        overflow-y: hidden;
-	    }
-	    .eclips1{
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 230px;
-            float: left;
-        }
-        .image-box{
-            width:615px;
-        }
-	</style>
- 
-<script>
-var msg = '{{Session::get('alert')}}';
-var exist = '{{Session::has('alert')}}';
-if(exist){
-alert(msg);
-         }        
-</script>
+		
+		
+		
+		
+	</head>
 
-</head>
-<body class="home" style="overflow-x: hidden;">
+	<body class="home">
 
-<div class="placejs explore explore-main">
-<a href="#" id="js-feedback-btn" class="fixed-feedback-bn">Feedback</a>
-<div id="container">
+		<div id="top"></div>
 
-<div class="relative-hdr">
-<header class="explore-hdr">
-@if($message = Session::get('success'))
-    <div class="alert alert-success">{{ $message }}</div>
-@endif
+		<!-- Navigation (main menu)
+		================================================== -->
 
-   <!-- 
-<div class="hdr-wrapper">
-        <h2 class="logo-cont">
-			<a href="https://spadli.com/wp-content/uploads/2017/03/Spadli-logobeta-1.png" class="logo-wrapper">
-				<span class="icon-cont icons-everplaces">
-				    <span class="wrapper-hidden-text">Spadli</span>
-				</span>
-			</a>
-		</h2>
-        <ul class="right-nav">
-            <li class="nav-el">
-                <a class="login-btn transparent-btn" href="/">Home</a>
-            </li>
-            <li class="nav-el">
-                <a class="login-btn transparent-btn" href="auth">Log in</a>
-            </li>
-            <li class="nav-el">
-                <a id="js-signup-btn" class="signup-btn orange-btn" href="auth">Sign up</a>
-            </li>
-        </ul>
-    </div>
+		<div class="navbar-wrapper">
+			<header class="navbar navbar-default navbar-fixed-top" id="MainMenu">
+				<div class="navbar-extra-top clearfix">
+					<div class="navbar container-fluid">
+						<ul class="nav navbar-nav navbar-left">
+							<li class="menu-item"><a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a></li>
+							<li class="menu-item"><a href="#"><i class="fa fa-suitcase"></i> Join the Explorers!</a></li>
+							<li class="menu-item"><a href="auth"><i class="fa fa-sign-in"></i> Sign in</a></li>
+						</ul>
+						<div class="navbar-top-right">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="#"><i class="fa fa-facebook fa-fw"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus fa-fw"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter fa-fw"></i></a></li>
+								<li><a href="#"><i class="fa fa-instagram fa-fw"></i></a></li>
+							</ul>
+							<form class="navbar-form navbar-right navbar-search" role="search" action="search.html">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search">
+								</div>
+								<button type="submit" class="btn btn-default"><span class="fa fa-search"></span></button>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="container-fluid collapse-md" id="navbar-main-container">
+					<div class="navbar-header">
+						<a href="home" class="navbar-brand">
+                        
+                      <a href="#" style="font-size:30px;font-family: 'Montserrat', sans-serif;color:green;">Spadli</a>
+<!--
+                        <img alt="GoExplore!" src="assets/images/logo.png"><span class="sr-only">&nbsp; GoExplore!</span>
+                        -->
+                        </a>
+						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+
+					<nav class="navbar-collapse collapse" id="navbar-main">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="blog.html">News &amp; Articles</a></li>
+							<li><a href="page.html">Specials</a></li>
+						</ul>
+					</nav>
+				</div><!-- /.container-fluid -->
+			</header>
+		</div><!-- /.navbar-wrapper -->
 
 
-  -->
 
 
-  <div class="navbar navbar-inverse navbar-static-top">
-  <div class="container">
-    <a href="" class="navbar-brand">Spadli</a> 
-      <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <div class="collapse navbar-collapse navHeaderCollapse" style="margin-top:20px">
-      <ul class="nav navbar-nav navbar-right text-center">
-      
-            <li class="nav-el" style="margin-right:5px">
-                <a class="login-btn transparent-btn" href="/">Home</a>
-            </li>&nbsp;
-            <li class="nav-el" style="margin-right:5px">
-                <a class="login-btn transparent-btn" href="auth">Log in</a>
-            </li>&nbsp;
-            <li class="nav-el" style="margin-right:5px">
-                <a id="js-signup-btn" class="signup-btn orange-btn" href="auth">Sign up</a>
-            </li>
-        
-      </ul>
-    </div>
-</div>
-</div>
 
-</header>
 
-</div>
 
-    <div class="explore-search-cont"> 
+
+
+
+
+		<!-- Hero Section
+		================================================== 
+		<section class="hero hero-overlap" style="background-image: url({{ asset('front/assets/images/hero-1.jpg') }})">
+			<div class="bg-overlay">
+				<div class="container">
+					<div class="intro-wrap">
+						<h1 class="intro-title">Where the Journey Begins</h1>
+						<div class="intro-text"> Discover your next great adventure, <a href="#">become an explorer</a> to get started!</div>
+					</div>
+				</div>
+			</div>
+		</section>
+        -->
+
+        <div class="explore-search-cont"> 
         <div id="bgslides">
             <ul>
                 <li style="background-image: url(//dj1ec046erlmc.cloudfront.net/i/explore_main/head_1.jpg);display:list-item;"></li>
@@ -143,557 +134,643 @@ alert(msg);
 	          <strong>Popular Searches</strong>: <a href="#">Destination</a>, <a href="#">Top Picks Cities</a>,</span> <a href="#">Tours</a>, <a href="#">Travel Deals</a></div>
         </div>
     </div>
+
+<div style="height:100px">
 </div>
-<!-- Featured Destinations================================================== -->
+
+
+		<!-- Featured Destinations
+		================================================== -->
 		<section class="featured-destinations">
 			<div class="container">
-				<div class="cards overlap ">
-					<!-- Section Title -->
+				<div class="cards overlap">
+
+					<!-- Section Title 
+					<div class="title-row">
+						<h3 class="title-entry">Featured Destinations</h3>
+						<a href="destinations-list.html" class="btn btn-primary btn-xs">Find More &nbsp; <i class="fa fa-angle-right"></i></a>
+					</div>
+-->
+
 					<!-- Cards Row -->
-				    <div class="row main-box-list">
-                        <div class="col-md-3 col-sm-6 col-xs-12" style="max-height:342px;" data-id="0000">
-							<article class="card">
-								<div class="card-details card-setting">
-										<i class="faa fa-exchange" aria-hidden="true"></i>
-										<i class="fa fa-map-marker mapa"></i>
-										<h4 class="card-title">
-										    <a href="#">Tofinio Canada</a>
-										</h4>
-								</div>
-								<a href="#" class="featured-image" style="background-image: url({{ asset('assets/images/2.png') }})">
-									<div class="featured-img-inner"></div>
-								</a>
-								<div class="new show">
-										<i class="fa fa-heart heart-unclicked" aria-hidden="true">0</i>														
-										<i  style="color: white; float: right; margin-right: 5%; transform: rotate(90deg); font-size: 20px;" class="margin-i fa fa-ellipsis-v open-list" aria-hidden="true"></i>
-								</div>								
-								<div class="card-details card-details-bottom" style="margin-top: -1%;">
-									<div class="meta-details clearfix">
-										<ul class="hierarchy" style="margin-left: -10px;">
-											<li class="symbol"><i class="fa fa-map-marker"></i></li>
-											<li><a href="#">Oceania>canada</a></li>
-											<div class="rating" style="float: right; margin-top: 0%; margin-left: -3%; padding: 0%; display: contents;">
-												<input id="rating-4" type="radio" name="rating" value="4" checked />
-												<label for="rating-4">
-												    <i class="fas fa fa-star"></i>
-												</label>
-												<input id="rating-3" type="radio" name="rating" value="3"/>
-												<label for="rating-3">
-												    <i class="fas fa fa-star"></i>
-												</label>
-												<input id="rating-2" type="radio" name="rating" value="2"/>
-												<label for="rating-2">
-												    <i class="fas fa fa-star"></i>
-												</label>
-												<input id="rating-1" type="radio" name="rating" value="1"/>
-												<label for="rating-1">
-												    <i class="fas fa fa-star"></i>
-												</label>
-											</div>											
-											</ul>
-						            </div>
-								</div>
-								<div style="float: left;">
-								<div class="share-list" style="margin-left: -13px; margin-top: -73%;">
-									<div class="popup-content">
-										<div class="box">
-											<button class="close">x</button>  
-												<i  style="margin-top: 2px; cursor: pointer; float: left; margin-left: 5px;" class="fa fa-share-alt social-share-list" aria-hidden="true">Share Post</i>
-												<i  style="margin-top: 22px; float: left; margin-left: -40%; cursor: pointer;" class="fa fa-comment comment-popup" id="myBtn" aria-hidden="true">Comment here</i>
-												<i  style="float: left; margin-left: -54%; cursor: pointer; margin-top: 44px;" class="fa fa-share social-share-list2"   aria-hidden="true"> Follow List</i>
-												<i  style="margin-top: 66px; float: left; margin-left: -55%; cursor: pointer;" class="fa fa-link" aria-hidden="true"> Share Items </i>
-												<i  style="float: left; margin-left: -55%; cursor: pointer; margin-top: 87px;" class="fa fa-heart" aria-hidden="true"> Add to Wishlist</i>
-												<i  style="float: left; margin-left: -60%; cursor: pointer; margin-top: 111px;" class="fa fa-flag report-post" aria-hidden="true"> Report</i>
-										</div>
-									</div>
-								</div>
-                                
-								<!--<div class="social-media">
-									<div class="popup-content1">
-										<div class="box1" id="m2">
-											<button class="close">x</button>  
-												<div class="sharethis-inline-share-buttons"></div>	
-										</div>
-									</div>
-								</div>
-			                    <div class="social-media-follow">
-									<div class="popup-content2">
-										<div class="box1" id="m2" style="margin-top: -93px;">
-											<button class="close">x</button>  
-												<div class="sharethis-inline-follow-buttons"></div>
-										</div>
-									</div>
-								</div>  -->
-								</div>
-							</article>
-							
-                     </div>	
-
-
-						<div class="col-md-3 col-sm-6 col-xs-12" style="max-height:342px;" data-id="0001">
-							<article class="card">
-								<div class="card-details card-setting">
-										<i class="faa fa-exchange" aria-hidden="true"></i>
-										<i class="fa fa-map-marker mapa"></i>
-										<h4 class="card-title">
-										    <a href="#">Tofinio Canada</a>
-										</h4>
-								</div>
-								<a href="#" class="featured-image" style="background-image: url({{ asset('assets/images/2.png') }})">
-									<div class="featured-img-inner">
-									</div>
-								</a>
-							<div class="new show" style="margin-top: -17%;">
-										<i class="fa fa-heart heart-unclicked" aria-hidden="true" style=" margin-top: 2%; margin-left: 2%; color: white; font-size: 14px;">1234</i>														
-										<i  style="color: white; float: right; margin-right: 5%; transform: rotate(90deg); font-size: 20px;" class="margin-i fa fa-ellipsis-v open-list" aria-hidden="true"></i>
-								</div>
-								<div class="card-details card-details-bottom" style="margin-top: -7%;">
-									<div class="meta-details clearfix">
-										<ul class="hierarchy" style="padding-top: 0%; margin-top: -4%; margin-left: -10px; margin-bottom: -7%;">
-										<img style="width: 18%; border-radius: 50%; height: 100%;" src="http://placehold.it/300x300" >
-											</ul>
-											<div>
-											<p class="titlepersonal">Personal</p>
-											<p class="catpersoanl categ-id">animal</p>
-											</div>
-						            </div>
-								</div>
-								<div style="float: left;">
-								<div class="share-list" style="margin-left: -13px; margin-top: -73%;">
-									<div class="popup-content">
-										<div class="box">
-											<button class="close">x</button>  
-												<i  style="margin-top: 2px; cursor: pointer; float: left; margin-left: 5px;" class="fa fa-share-alt social-share-list" aria-hidden="true">Share Post</i>
-												<i  style="margin-top: 22px; float: left; margin-left: -40%; cursor: pointer;" class="fa fa-comment comment-popup" id="myBtn" aria-hidden="true">Comment here</i>
-												<i  style="float: left; margin-left: -54%; cursor: pointer; margin-top: 44px;" class="fa fa-share social-share-list2"   aria-hidden="true"> Follow List</i>
-												<i  style="margin-top: 66px; float: left; margin-left: -55%; cursor: pointer;" class="fa fa-link" aria-hidden="true"> Share Items </i>
-												<i  style="float: left; margin-left: -55%; cursor: pointer; margin-top: 87px;" class="fa fa-heart" aria-hidden="true"> Add to Wishlist</i>
-												<i  style="float: left; margin-left: -60%; cursor: pointer; margin-top: 111px;" class="fa fa-flag report-post" aria-hidden="true"> Report</i>
-										</div>
-									</div>
-								</div>
-	
-							 <!--	<div class="social-media">
-									<div class="popup-content1">
-										<div class="box1" id="m2">
-											<button class="close">x</button>  
-												<div class="sharethis-inline-share-buttons"></div>	
-										</div>
-									</div>
-								</div>								
-			                    <div class="social-media-follow">
-									<div class="popup-content2">
-										<div class="box1" id="m2" style="margin-top: -93px;">
-											<button class="close">x</button>  
-												<div class="sharethis-inline-follow-buttons"></div>
-										</div>
-								</div>
-								</div>  --> 
-								</div>
-							</article>
-						</div> 
-                           @foreach($posts ?? '' as $post)
-                            @if($post->listing_id == $personalListingId)
-                                <div class="col-md-3 col-sm-6 col-xs-12" style="max-height:342px;" data-id="{{ $post->id }}">
-                                    <article class="card">
-                                        <div class="card-details card-setting">
-                                            <i class="faa fa-exchange" aria-hidden="true"></i>
-                                            <i class="fa fa-map-marker mapa"></i>
-                                            <h4 class="card-title">
-                                                <a href="{{ url('posts/detail/' . $post->id) }}">
-                                                    {{ $post->city }} {{ $post->state }} {{ $post->country }}
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <a href="{{ url('posts/detail/' . $post->id) }}" class="featured-image" style="background-image: url({{ asset('uploads/' . $post->gallery) }})">
+					<div class="row">
+                        @foreach($posts ?? '' as $post)
+                        @if($post->listing_id == $personalListingId)
+						
+                        <div class="col-md-3 col-sm-6 col-xs-12" data-id="{{ $post->id }}" >
+						
+                          <article class="card" style="border-radius:4%">
+                          <h4 class="card-title" style="background-color:white;padding-left:10px;color:black;font-family: 'Montserrat', sans-serif;">{{$post->title}}</h4>
+                          <a href="{{ url('posts/detail/' . $post->id) }}" class="featured-image" style="background-image: url({{ asset('uploads/' . $post->gallery) }})">
                                             <div class="featured-img-inner">
                                             </div>
                                         </a>
-                                        <div class="new show" style="margin-top: -17%;">
-                                            <i class="fa fa-heart heart-unclicked" aria-hidden="true" style=" margin-top: 2%; margin-left: 2%; color: white; font-size: 14px;">1234</i>														
-                                            <i  style="color: white; float: right; margin-right: 5%; transform: rotate(90deg); font-size: 20px;" class="margin-i fa fa-ellipsis-v open-list" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="card-details card-details-bottom" style="margin-top: -7%;">
-                                            <div class="meta-details clearfix">
-                                                <ul class="hierarchy" style="padding-top: 0%; margin-top: -4%; margin-left: -10px; margin-bottom: -7%;">
-                                                    <img style="width: 18%; border-radius: 50%; height: 100%;" src="http://placehold.it/300x300" >
-                                                </ul>
-                                            <div>
-                                            <p class="titlepersonal">Personal</p>
-                                            <p class="catpersoanl categ-id">
-                                                @foreach($post->categories as $item)
-                                                    @if(!$loop->first), @endif {{ $item->name }}
-                                                @endforeach</p>
-                                        </div>
-                                   <!--  </div>
-                                </div> -->
-                                        <div style="float: left;">
-                                            <div class="share-list" style="margin-left: -13px; margin-top: -73%;">
-                                                <div class="popup-content">
-                                                    <div class="box">
-                                                        <button class="close">x</button>  
-                                                        <i  style="margin-top: 2px; cursor: pointer; float: left; margin-left: 5px;" class="fa fa-share-alt social-share-list" aria-hidden="true">Share Post</i>
-                                                        <i  style="margin-top: 22px; float: left; margin-left: -40%; cursor: pointer;" class="fa fa-comment comment-popup" id="myBtn" aria-hidden="true">Comment here</i>
-                                                        <i  style="float: left; margin-left: -54%; cursor: pointer; margin-top: 44px;" class="fa fa-share social-share-list2"   aria-hidden="true"> Follow List</i>
-                                                        <i  style="margin-top: 66px; float: left; margin-left: -55%; cursor: pointer;" class="fa fa-link" aria-hidden="true"> Share Items </i>
-                                                        <i  style="float: left; margin-left: -55%; cursor: pointer; margin-top: 87px;" class="fa fa-heart" aria-hidden="true"> Add to Wishlist</i>
-                                                        <i  style="float: left; margin-left: -60%; cursor: pointer; margin-top: 111px;" class="fa fa-flag report-post" aria-hidden="true"> Report</i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <!--    <div class="social-media">
-                                                <div class="popup-content1">
-                                                    <div class="box1" id="m2">
-                                                        <button class="close">x</button>  
-                                                        <div class="sharethis-inline-share-buttons"></div>	
-                                                    </div>
-                                                </div>
-                                            </div>								
-                                            <div class="social-media-follow">
-                                                <div class="popup-content2">
-                                                    <div class="box1" id="m2" style="margin-top: -93px;">
-                                                        <button class="close">x</button>  
-                                                        <div class="sharethis-inline-follow-buttons"></div>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                        </div>
-                                    </article>
-                                </div> 
-                            @elseif($post->listing_id == $publicityListingId)
-                                <div class="col-md-3 col-sm-6 col-xs-12" style="max-height:342px;" data-id="{{ $post->id }}">
-                                    <article class="card">
-                                        <div class="card-details card-setting">
-                                            <i class="faa fa-exchange" aria-hidden="true"></i>
-                                            <i class="fa fa-map-marker mapa"></i>
-                                            <h4 class="card-title">
-                                                <a href="{{ url('posts/detail/' . $post->id) }}">
+								<div class="card-details">
+								   <h4 class="card-title">
+                                    <a href="{{ url('posts/detail/' . $post->id) }}">
                                                     {{ $post->city }} {{ $post->state }} {{ $post->country }}
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <a href="{{ url('posts/detail/' . $post->id) }}" class="featured-image post-design" style="background-image: url({{ asset('uploads/' . $post->gallery) }}) ">
-                                            <div class="featured-img-inner"></div>
-                                        </a>
-                                        <div class="new show">
-                                            <i class="fa fa-heart heart-unclicked" aria-hidden="true" style=" margin-top: 2%; margin-left: 2%; color: white; font-size: 14px;">1234</i>														
-                                            <i  style="color: white; float: right; margin-right: 5%; transform: rotate(90deg); font-size: 20px;" class="margin-i fa fa-ellipsis-v open-list" aria-hidden="true"></i>
-                                        </div>								
-                                        <div class="card-details card-details-bottom post-design-lower">
-                                            <div class="meta-details clearfix">
-                                                <ul class="hierarchy" style="padding-top: 0%; margin-top: 0%; margin-left: -11px; margin-bottom: -22%;">
-                            
-                                                <img style="width: 18%; border-radius: 50%; height: 100%;" src="http://placehold.it/300x300" >
-                                                    </ul>
-                                                    <div class="title-color">
-                                                    <p class="title-post eclips1"> {{ $post->title }}</p>
-                                                    </div>
-                                                    <div class="condition-id" style="margin-top: 20%">
-                                                        <p class="nameid">Publicity</p>
-                                                        
-                                                        <p class="nameid categ-id" style=" margin-top: -5%; ">
-                                                            <i class="fa fa-folder"></i>
-                                                            @foreach($post->categories as $item)
-                                                                @if(!$loop->first), @endif {{ $item->name }}
-                                                            @endforeach</p>
-                                                    </div>
-                                                    
-                                            </div>							
-                                        </div>
-                                        <div style="float: left;">
-                                            <div class="share-list" style="margin-left: -13px; margin-top: -73%;">
-                                                <div class="popup-content">
-                                                    <div class="box">
-                                                        <button class="close">x</button>  
-                                                            <i  style="margin-top: 2px; cursor: pointer; float: left; margin-left: 5px;" class="fa fa-share-alt social-share-list" aria-hidden="true">Share Post</i>
-                                                            <i  style="margin-top: 22px; float: left; margin-left: -40%; cursor: pointer;" class="fa fa-comment comment-popup" id="myBtn" aria-hidden="true">Comment here</i>
-                                                            <i  style="float: left; margin-left: -54%; cursor: pointer; margin-top: 44px;" class="fa fa-share social-share-list2"   aria-hidden="true"> Follow List</i>
-                                                            <i  style="margin-top: 66px; float: left; margin-left: -55%; cursor: pointer;" class="fa fa-link" aria-hidden="true"> Share Items </i>
-                                                            <i  style="float: left; margin-left: -55%; cursor: pointer; margin-top: 87px;" class="fa fa-heart" aria-hidden="true"> Add to Wishlist</i>
-                                                            <i  style="float: left; margin-left: -60%; cursor: pointer; margin-top: 111px;" class="fa fa-flag report-post" aria-hidden="true"> Report</i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                      <!--  <div class="social-media">
-                                                <div class="popup-content1">
-                                                    <div class="box1" id="m2">
-                                                        <button class="close">x</button>  
-                                                            <div class="sharethis-inline-share-buttons"></div>	
-                                                    </div>
-                                                </div>
-                                            </div>								
-                                            <div class="social-media-follow">
-                                                <div class="popup-content2">
-                                                    <div class="box1" id="m2" style="margin-top: -93px;">
-                                                        <button class="close">x</button>  
-                                                            <div class="sharethis-inline-follow-buttons"></div>
-                                                    </div>
-                                                </div>
-                                            </div>  -->
+                                    </a>
+                                </h4>
                                     
-                                        </div>
-                                    </article>
-                                </div>
-                            @elseif($post->listing_id == $salesListingId)
-                                <div class="col-md-3 col-sm-6 col-xs-12" style="max-height:342px;" data-id="{{ $post->id }}">
-                                    <article class="card">
-                                        <div class="card-details card-setting">
-                                            <i class="faa fa-exchange" aria-hidden="true"></i>
-                                            <i class="fa fa-map-marker mapa"></i>
-                                            <h4 class="card-title">
-                                                <a href="{{ url('posts/detail/' . $post->id) }}">
-                                                    {{ $post->city }} {{ $post->state }} {{ $post->country }}
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <a href="{{ url('posts/detail/' . $post->id) }}" class="featured-image post-design" style="background-image: url({{ asset('uploads/' . $post->gallery) }})">
-                                            <div class="featured-img-inner"></div>
-                                        </a>
-                                        <div class="new show">
-                                            <i class="fa fa-heart heart-unclicked" aria-hidden="true" style=" margin-top: 2%; margin-left: 2%; color: white; font-size: 14px;">1234</i>														
-                                            <i  style="color: white; float: right; margin-right: 5%; transform: rotate(90deg); font-size: 20px;" class="margin-i fa fa-ellipsis-v open-list" aria-hidden="true"></i>
-                                        </div>								
-                                        <div class="card-details card-details-bottom post-design-lower">
-                                            <div class="meta-details clearfix">
-                                                <ul class="hierarchy" style="padding-top: 0%; margin-top: 0%; margin-left: -11px; margin-bottom: -22%;">
-                            
-                                                <img style="width: 18%; border-radius: 50%; height: 100%;" src="http://placehold.it/300x300" >
-                                                    </ul>
-                                                    <div class="title-color">
-                                                    <p class="title-post eclips1"> {{ $post->title }}</p>
-                                                    </div>
-                                                    <div style="margin-top: 9%; font-size: small;">
-                                                        <p class="nameid">sale-AD</p>
-                                                        
-                                                        <p class="nameid categ-id"><i class="fa fa-folder"></i
-                                                        >@foreach($post->categories as $item)
-                                                                @if(!$loop->first), @endif {{ $item->name }}
-                                                            @endforeach</p>
-                                                    </div>
-                                                    <div class="condition-id">
-                                                        <p class="nameid">{{ $post->conditions }}</p>
-                                                        <p class="nameid categ-id eclips1" style="font-size: large; margin-top: -7%; margin-left: 81%;">
-                                                            {{ $post->price }} {{ $post->currency }}
-                                                        </p>
-                                                    </div>
-                                            </div>							
-                                        </div>
-                                        <div style="float: left;">
-                                            <div class="share-list" style="margin-left: -13px; margin-top: -73%;">
-                                                <div class="popup-content">
-                                                    <div class="box">
-                                                        <button class="close">x</button>  
-                                                            <i  style="margin-top: 2px; cursor: pointer; float: left; margin-left: 5px;" class="fa fa-share-alt social-share-list" aria-hidden="true">Share Post</i>
-                                                            <i  style="margin-top: 22px; float: left; margin-left: -40%; cursor: pointer;" class="fa fa-comment comment-popup" id="myBtn" aria-hidden="true">Comment here</i>
-                                                            <i  style="float: left; margin-left: -54%; cursor: pointer; margin-top: 44px;" class="fa fa-share social-share-list2"   aria-hidden="true"> Follow List</i>
-                                                            <i  style="margin-top: 66px; float: left; margin-left: -55%; cursor: pointer;" class="fa fa-link" aria-hidden="true"> Share Items </i>
-                                                            <i  style="float: left; margin-left: -55%; cursor: pointer; margin-top: 87px;" class="fa fa-heart" aria-hidden="true"> Add to Wishlist</i>
-                                                            <i  style="float: left; margin-left: -60%; cursor: pointer; margin-top: 111px;" class="fa fa-flag report-post" aria-hidden="true"> Report</i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <!--   <div class="social-media">
-                                                <div class="popup-content1">
-                                                    <div class="box1" id="m2">
-                                                        <button class="close">x</button>  
-                                                            <div class="sharethis-inline-share-buttons"></div>	
-                                                    </div>
-                                                </div>
-                                            </div>								
-                                            <div class="social-media-follow">
-                                                <div class="popup-content2">
-                                                    <div class="box1" id="m2" style="margin-top: -93px;">
-                                                        <button class="close">x</button>  
-                                                            <div class="sharethis-inline-follow-buttons"></div>
-                                                    </div>
-                                                </div>
-                                            </div>  -->
-                                        </div>
-                                    </article>
-                                </div>
-                            @elseif($post->listing_id == $eventsListingId)
-                                <div class="col-md-3 col-sm-6 col-xs-12" style="max-height:342px;" data-id="{{ $post->id }}">
-                                    <article class="card">
-                                        <div class="card-details card-setting">
-                                            <i class="faa fa-exchange" aria-hidden="true"></i>
-                                            <i class="fa fa-map-marker mapa"></i>
-                                            <h4 class="card-title">
-                                                <a href="{{ url('posts/detail/' . $post->id) }}">
-                                                    {{ $post->city }} {{ $post->state }} {{ $post->country }}
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <a href="{{ url('posts/detail/' . $post->id) }}" class="featured-image post-design" style="background-image: url({{ asset('uploads/' . $post->gallery) }}) ">
-                                            <div class="featured-img-inner"></div>
-                                        </a>
-                                        <div class="new show">
-                                            <i class="fa fa-heart heart-unclicked" aria-hidden="true" style=" margin-top: 2%; margin-left: 2%; color: white; font-size: 14px;">1234</i>														
-                                            <i  style="color: white; float: right; margin-right: 5%; transform: rotate(90deg); font-size: 20px;" class="margin-i fa fa-ellipsis-v open-list" aria-hidden="true"></i>
-                                        </div>
+                                   
+                                    <p>
+                                    <img style="width: 18%; border-radius: 50%; height: 100%;" src="http://placehold.it/300x300" >
+                                      Personal <br>
+                                      <div class="meta-details clearfix">
+                                                     <ul class="hierarchy">
+                                                         <li class="symbol"><i class="fa fa-map-marker"></i></li>
+                                                         <li><a href="destination-parent.html">Oceania</a></li>
+                                                     </ul>
+                                                 </div>
+                                   </p>
+                                   
+                                   
+                                                 
                                     
-                                        <div class="card-details card-details-bottom post-design-lower" >
-                                            <div class="meta-details clearfix">
-                                                <ul class="hierarchy" style="padding-top: 0%; margin-top: 0%; margin-left: -11px; margin-bottom: -22%;">
-                            
-                                                <img style="width: 18%; border-radius: 50%; height: 100%;" src="http://placehold.it/300x300" >
-                                                    </ul>
-                                                    <div class="title-color">
-                                                    <p class="title-post eclips1"> {{ $post->title }}</p>
-                                                    </div>
-                                                    <div style="margin-top: 9%; font-size: small;">
-                                                        <p class="nameid">Events</p>
-                                                        
-                                                        <p class="nameid categ-id"><i class="fa fa-folder"></i>
-                                                        @foreach($post->categories as $item)
-                                                                @if(!$loop->first), @endif {{ $item->name }}
-                                                            @endforeach</p>
-                                                    </div>
-                                                    <div class="condition-id">
-                                                        <p class="nameid">{{ \Carbon\Carbon::parse($post->posted_at)->toDateString() }}</p>
-                                                        <p class="nameid categ-id" style="margin-top: -5%;">{{ \Carbon\Carbon::parse($post->posted_at)->toTimeString() }}</p>
-                                                    </div>
-                                            </div>							
-                                        </div>
-                                        <div style="float: left;">
-                                            <div class="share-list" style="margin-left: -13px; margin-top: -73%;">
-                                                <div class="popup-content">
-                                                    <div class="box">
-                                                        <button class="close">x</button>  
-                                                            <i  style="margin-top: 2px; cursor: pointer; float: left; margin-left: 5px;" class="fa fa-share-alt social-share-list" aria-hidden="true">Share Post</i>
-                                                            <i  style="margin-top: 22px; float: left; margin-left: -40%; cursor: pointer;" class="fa fa-comment comment-popup" id="myBtn" aria-hidden="true">Comment here</i>
-                                                            <i  style="float: left; margin-left: -54%; cursor: pointer; margin-top: 44px;" class="fa fa-share social-share-list2"   aria-hidden="true"> Follow List</i>
-                                                            <i  style="margin-top: 66px; float: left; margin-left: -55%; cursor: pointer;" class="fa fa-link" aria-hidden="true"> Share Items </i>
-                                                            <i  style="float: left; margin-left: -55%; cursor: pointer; margin-top: 87px;" class="fa fa-heart" aria-hidden="true"> Add to Wishlist</i>
-                                                            <i  style="float: left; margin-left: -60%; cursor: pointer; margin-top: 111px;" class="fa fa-flag report-post" aria-hidden="true"> Report</i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                         <!--    <div class="social-media">
-                                                <div class="popup-content1">
-                                                    <div class="box1" id="m2">
-                                                        <button class="close">x</button>  
-                                                            <div class="sharethis-inline-share-buttons">
-                                                            </div>	
-                                                    </div>
-                                                </div>
-                                            </div>	
 
-                                           <div class="social-media-follow">
-                                                <div class="popup-content2">
-                                                    <div class="box1" id="m2" style="margin-top: -93px;">
-                                                        <button class="close">x</button>  
-                                                            <div class="sharethis-inline-follow-buttons"></div>
-                                                    </div>
-                                                </div>
-                                            </div>-->
-                                        </div>  
-                                    </article>
-                                </div>                                        
-                            @endif
+                                                
+                                    
+                                    
+                                   
+                                    
+
+								</div>
+							</article>
+						
+                        </div>
+                        @elseif($post->listing_id == $publicityListingId)
+						<div class="col-md-3 col-sm-6 col-xs-12" data-id="{{ $post->id }}">
+							<article class="card" style="border-radius:4%">
+                            <h4 class="card-title" style="background-color:white;padding-left:10px;color:black;font-family: 'Montserrat', sans-serif;">{{$post->title}}</h4>
+                            <a href="{{ url('posts/detail/' . $post->id) }}" class="featured-image post-design" style="background-image: url({{ asset('uploads/' . $post->gallery) }}) ">
+                                            <div class="featured-img-inner"></div>
+                            </a>
+
+								<div class="card-details">
+                                <h4 class="card-title">
+                                                <a href="{{ url('posts/detail/' . $post->id) }}">
+                                                    {{ $post->city }} {{ $post->state }} {{ $post->country }}
+                                                </a>
+                                            </h4>
+                                            <p class="titlepersonal">Publicity</p>
+									<div class="meta-details clearfix">
+										<ul class="hierarchy">
+											<li class="symbol"><i class="fa fa-map-marker"></i></li>
+											<li><a href="destination-parent.html">Europe</a></li>
+										</ul>
+									</div>
+                                        
+								</div>
+							</article>
+						</div>  
+
+						@elseif($post->listing_id == $salesListingId)
+                        <div class="col-md-3 col-sm-6 col-xs-12" data-id="{{ $post->id }}">
+							<article class="card" style="border-radius:4%">
+                            <h4 class="card-title" style="background-color:white;padding-left:10px;color:black;font-family: 'Montserrat', sans-serif;">{{$post->title}}</h4>
+                            <a href="{{ url('posts/detail/' . $post->id) }}" class="featured-image post-design" style="background-image: url({{ asset('uploads/' . $post->gallery) }}) ">
+                                            <div class="featured-img-inner"></div>
+</a>
+
+								<div class="card-details">
+                                <h4 class="card-title">
+                                                <a href="{{ url('posts/detail/' . $post->id) }}">
+                                                    {{ $post->city }} {{ $post->state }} {{ $post->country }}
+                                                </a>
+                                            </h4>
+                                            <p>
+                                    <img style="width: 18%; border-radius: 50%; height: 100%;" src="http://placehold.it/300x300" >
+                                      Sales
+                                      <div class="meta-details clearfix">
+                                                     <ul class="hierarchy">
+                                                         <li class="symbol"><i class="fa fa-map-marker"></i></li>
+                                                         <li><a href="destination-parent.html">Oceania</a></li>
+                                                     </ul>
+                                                 </div>
+                                   </p>
+
+
+								</div>
+							</article>
+						</div>   
+
+                        @elseif($post->listing_id == $eventsListingId)
+                        <div class="col-md-3 col-sm-6 col-xs-12" data-id="{{ $post->id }}">
+							<article class="card" style="border-radius:4%">
+                            <h4 class="card-title" style="background-color:white;padding-left:10px;color:black;font-family: 'Montserrat', sans-serif;">{{$post->title}}</h4>
+                            <a href="{{ url('posts/detail/' . $post->id) }}" class="featured-image post-design" style="background-image: url({{ asset('uploads/' . $post->gallery) }}) ">
+                                            <div class="featured-img-inner"></div>
+                            </a>
+
+								<div class="card-details">
+                                <h4 class="card-title">
+                                                <a href="{{ url('posts/detail/' . $post->id) }}">
+                                                    {{ $post->city }} {{ $post->state }} {{ $post->country }}
+                                                </a>
+                                            </h4>
+                                            <p class="titlepersonal">Events</p>
+                                          
+
+									<div class="meta-details clearfix">
+										<ul class="hierarchy">
+											<li class="symbol"><i class="fa fa-map-marker"></i></li>
+											<li><a href="destination-parent.html">Europe</a></li>
+										</ul>
+									</div>
+								</div>
+							</article>
+						</div>  
+                        @endif
                         @endforeach
+						
+						
+								
+						
+						
+					</div> <!-- /.row -->
+				</div>
+			</div>
+		</section>
+
+
 		<!-- Home Page Search Section
 		================================================== -->
-	<div id="myModal" class="modal fade" role="dialog" style="z-index: 100000;">
-  <!-- Modal content -->
-		<div class="modal-content" style="float:left;">
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<div class="image-box" style="float:left;">
-						<a href="https://flights.spadli.com/flights/BNE0708SYD28081" target="_blank" style="width:100%;">
-							<img src="https://myzone-e3qixj3gbfacwv.netdna-ssl.com/wp-content/uploads/2017/09/2-2-800x600.png" style="width:100%;">
-                        </a>
+		<section class="regular">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-lg-4">
+						<figure style="text-align:center">
+							<img src="assets/images/logo-symbol-complex-colors.png" alt="GoExplore!" width="387" height="214">
+						</figure>
 					</div>
-                <div class="comment-box-list" style="float:left;">
-                    <div class="card paper">
-                        <summary style="padding:1em;">
-                            <span class="comment-model-count">0 </span>comment
-                            <li class="list-group-item comment-list-clone hidden" style="border: none !important; border-radius: 0 !important;">
-                                <span class="circle" style="position: absolute; width: 42px; height: 42px; overflow: hidden; left: 15px; display: inline-block; vertical-align: middle; border-radius: 50%;">
-									<img src="https://myzone-e3qixj3gbfacwv.netdna-ssl.com/wp-content/uploads/avatars/1/5a9998e6a76c7-bpfull.png" class="avatar user-1-avatar avatar-96 photo" width="96" height="96" alt="Profile photo of admin">
-                                </span>
-                                <span class="title" style="display: inline-block; margin-left: 4em;">
-									<a href="https://www.spadli.com/members/admin/" style="font-size: 14px !important; font-weight: 500 !important; color: rgba(0,0,0,.8);text-decoration: none !important;">User</a> 
-									<time class="comment-box-time" style="font-size: 12px; color: rgba(0,0,0,.5)!important; font-weight: 400; margin-left: 6px;"> Dec 11 2019  02:12 AM</time>
-									<p class="comment-box-text" style="margin-bottom: 0; white-space: normal; color: rgba(0,0,0,.8); font-size: 14px; margin-top: 0.215em;">hi test </p>
-                                </span>
-                            </li>
-                            <div class="comment-box-data">
-                                
-                            </div>
-						</summary>					
-								
-                    	<form style="position: fixed;bottom: 0;margin-bottom: 10px;float: left;">
-                        <fieldset class="form-group">
-                            <input class="form-control comment-input" id="comment-data" placeholder="Add something about it" name="comment-data" value="">
-                            <button type="button" style="float: right;" class="add-comment-btn btn-sm btn-success">Add Comment</button>
-                                        </fieldset>
-                                            
-                                    </form>	
-					</div> 
-                </div>
-        </div>
-    </div>	
-</div>
-</div>
-<!-- Folow us -->
-<!--  posts popup  -->
-<!-- Emotes -->
-  <div class="sharethis-inline-reaction-buttons"></div>
-<!--
-<h2>Popup</h2>
-<div class="popup2" onclick="myFunction()">Click me to toggle the popup!
-  <span class="popuptext" id="myPopup">A Simple Popup!</span>
-</div>
+					<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-0">
 
-	-->
-	
-	<!--
-	<div class="tooltip">Hover over me
-  <span class="tooltiptext">Tooltip text</span>
-</div>
-	
-	-->
-	<form method="post" action="{{url('/send')}}">
-	{{ csrf_field() }}
-    <div id="div-exchange-model" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" style="z-index: 10000;overflow-x: hidden;overflow-y: auto;">
-	    <div class="modal-content" style="width: 40%; margin: 5% auto;">
-	        <span class="close">x</span>
-	        <section class="featured-destinations" style="background-color:#ffffff;">
-	            <div class="cards overlap">
-	                
-	            </div>
-	        </section>
-	   </div>
-	</div>
+						<div class="col-md-12 col-lg-10 col-lg-offset-1">
+							<h3 style="text-align: center;">Be more than just another traveler when you <em>GoExplore!</em></h3>
+						</div>
+						<div class="col-sm-12">
+							<form class="big-search">
+								<input type="text" placeholder="Find Your Next Destination...">
+								<button type="submit"><span class="glyphicon glyphicon-search"></span></button>
+							</form>
+						</div>
+
+					</div>
+				</div> <!-- /.row -->
+			</div> <!-- /.container -->
+		</section>
+
+
+		<!-- Home Page Accordion Section
+		================================================== -->
+		<section class="regular background">
+			<div class="container">
+				<div class="row">
+
+					<h3 class="hidden">Destination Categories</h3>
+
+					<div class="col-md-6 col-lg-4">
+						<article class="card accordion-card">
+							<header>
+								<h3 class="section-title">Adventure Seekers</h3>
+								<p>With endless hiking trails, these destinations will satisfy the wildest explorers!</p>
+                                <div class="explore-search-cont">                       
+                            </header>
 
 
 
+							<div class="accordion-panel">
+								<div class="panel-group" id="accordion-1" role="tablist" aria-multiselectable="true">
+									<!-- Guide Panel -->
+									<div class="panel panel-default" style="background-image: url('assets/images/destinations-20-960x540.jpg');">
+										<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+											<div class="panel-body">
+												<div class="read-more">Details <i class="fa fa-arrow-right"></i></div>
+												<a href="guide-single.html"><div class="spacer"></div></a>
+											</div>
+										</div>
+										<a data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+											<div class="panel-heading" role="tab" id="headingOne">
+												<div class="panel-icon">
+													<i class="fa fa-map-marker"></i>
+												</div>
+												<h4 class="panel-title">Buenos Aires, Argentina</h4>
+												<ul class="hierarchy">
+													<li>South America</li>
+												</ul>
+											</div>
+										</a>
+									</div>
+									<!-- Guide Panel -->
+									<div class="panel panel-default" style="background-image: url('assets/images/destinations-11-960x540.jpg');">
+										<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+											<div class="panel-body">
+												<div class="read-more">Details <i class="fa fa-arrow-right"></i></div>
+												<a href="guide-single.html"><div class="spacer"></div></a>
+											</div>
+										</div>
+										<a data-toggle="collapse" data-parent="#accordion-1" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+											<div class="panel-heading" role="tab" id="headingThree">
+												<div class="panel-icon">
+													<i class="fa fa-map-marker"></i>
+												</div>
+												<h4 class="panel-title">Queenstown, New Zealand</h4>
+												<ul class="hierarchy">
+													<li>Oceania</li>
+												</ul>
+											</div>
+										</a>
+									</div>
+									<!-- Guide Panel -->
+									<div class="panel panel-default" style="background-image: url('assets/images/destinations-10-960x540.jpg');">
+										<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+											<div class="panel-body">
+												<div class="read-more">Details <i class="fa fa-arrow-right"></i></div>
+												<a href="guide-single.html"><div class="spacer"></div></a>
+											</div>
+										</div>
+										<a data-toggle="collapse" data-parent="#accordion-1" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+											<div class="panel-heading" role="tab" id="headingFour">
+												<div class="panel-icon">
+													<i class="fa fa-map-marker"></i>
+												</div>
+												<h4 class="panel-title">Zermatt, Switzerland</h4>
+												<ul class="hierarchy">
+													<li>Europe</li>
+												</ul>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<footer><a href="#">Find More &nbsp; <i class="fa fa-arrow-right"></i></a></footer>
+						</article> <!-- /.accordion-card -->
+					</div>
 
-	
+					<div class="col-md-6 col-lg-4">
+						<article class="card accordion-card">
+							<header>
+								<h3 class="section-title">Beach Lovers</h3>
+								<p>Head for a swim and relax on the warm, golden sand. Life's a beach!</p>
+							</header>
+							<div class="accordion-panel">
+								<div class="panel-group" id="accordion-2" role="tablist" aria-multiselectable="true">
+									<!-- Guide Panel -->
+									<div class="panel panel-default" style="background-image: url('assets/images/destinations-14-960x540.jpg');">
+										<div id="collapseOne-2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+											<div class="panel-body">
+												<div class="read-more">Details <i class="fa fa-arrow-right"></i></div>
+												<a href="guide-single.html"><div class="spacer"></div></a>
+											</div>
+										</div>
+										<a data-toggle="collapse" data-parent="#accordion-2" href="#collapseOne-2" aria-expanded="true" aria-controls="collapseOne-2">
+											<div class="panel-heading" role="tab" id="headingOne-2">
+												<div class="panel-icon">
+													<i class="fa fa-map-marker"></i>
+												</div>
+												<h4 class="panel-title">Acapulco, Mexico</h4>
+												<ul class="hierarchy">
+													<li>North America</li>
+												</ul>
+											</div>
+										</a>
+									</div>
+									<!-- Guide Panel -->
+									<div class="panel panel-default" style="background-image: url('assets/images/destinations-13-960x540.jpg');">
+										<div id="collapseTwo-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo-2">
+											<div class="panel-body">
+												<div class="read-more">Details <i class="fa fa-arrow-right"></i></div>
+												<a href="guide-single.html"><div class="spacer"></div></a>
+											</div>
+										</div>
+										<a data-toggle="collapse" data-parent="#accordion-2" href="#collapseTwo-2" aria-expanded="true" aria-controls="collapseTwo-2">
+											<div class="panel-heading" role="tab" id="headingTwo-2">
+												<div class="panel-icon">
+													<i class="fa fa-map-marker"></i>
+												</div>
+												<h4 class="panel-title">Whitehaven Beach, Australia</h4>
+												<ul class="hierarchy">
+													<li>Oceania</li>
+												</ul>
+											</div>
+										</a>
+									</div>
+									<!-- Guide Panel -->
+									<div class="panel panel-default" style="background-image: url('assets/images/destinations-5-960x540.jpg');">
+										<div id="collapseThree-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+											<div class="panel-body">
+												<div class="read-more">Details <i class="fa fa-arrow-right"></i></div>
+												<a href="guide-single.html"><div class="spacer"></div></a>
+											</div>
+										</div>
+										<a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-2" aria-expanded="true" aria-controls="collapseThree-2">
+											<div class="panel-heading" role="tab" id="headingThree-2">
+												<div class="panel-icon">
+													<i class="fa fa-map-marker"></i>
+												</div>
+												<h4 class="panel-title">Algarve, Portugal</h4>
+												<ul class="hierarchy">
+													<li>Europe</li>
+												</ul>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<footer><a href="#">Find More &nbsp; <i class="fa fa-arrow-right"></i></a></footer>
+						</article> <!-- /.accordion-card -->
+					</div>
 
-<div id="report-post-modal" class="modal" tabindex="-1" role="dialog" style="z-index:1000000">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Report Post</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <input type="text" name="name" required value="" placeholder="Enter Your name " style="witdh:100px;height:25px;border-radius:10px;"/>
-        
-        <input type="email" name="email" required value="" placeholder="Enter Your Email " style="witdh:100px;height:25px;border-radius:10px;;margin-top:18px"/>
-        <input type="text"  name="message" required value="" placeholder="Enter Your Reason" style="witdh:100px;height:50px;border-radius:10px;margin-top:18px"/>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Report Post</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> <!--data-dismiss="modal"  -->
-      </div>
-    </div>
-  </div>
-</div>
+					<div class="col-md-12 col-lg-4">
+						<article class="card accordion-card">
+							<header>
+								<h3 class="section-title">Crowd Escapers</h3>
+								<p>Step away from the crowd, explore places where you'll feel no one has ever been before.</p>
+							</header>
+							<div class="accordion-panel">
+								<div class="panel-group" id="accordion-3" role="tablist" aria-multiselectable="true">
+									<!-- Guide Panel -->
+									<div class="panel panel-default" style="background-image: url('assets/images/destinations-22-960x540.jpg');">
+										<div id="collapseOne-3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+											<div class="panel-body">
+												<div class="read-more">Details <i class="fa fa-arrow-right"></i></div>
+												<a href="guide-single.html"><div class="spacer"></div></a>
+											</div>
+										</div>
+										<a data-toggle="collapse" data-parent="#accordion-3" href="#collapseOne-3" aria-expanded="true" aria-controls="collapseOne-3">
+											<div class="panel-heading" role="tab" id="headingOne-3">
+												<div class="panel-icon">
+													<i class="fa fa-map-marker"></i>
+												</div>
+												<h4 class="panel-title">Galapagos Islands, Ecuador</h4>
+												<ul class="hierarchy">
+													<li>South America</li>
+												</ul>
+											</div>
+										</a>
+									</div>
+									<!-- Guide Panel -->
+									<div class="panel panel-default" style="background-image: url('assets/images/destinations-19-960x540.jpg');">
+										<div id="collapseThree-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+											<div class="panel-body">
+												<div class="read-more">Details <i class="fa fa-arrow-right"></i></div>
+												<a href="guide-single.html"><div class="spacer"></div></a>
+											</div>
+										</div>
+										<a data-toggle="collapse" data-parent="#accordion-3" href="#collapseThree-3" aria-expanded="true" aria-controls="collapseThree-3">
+											<div class="panel-heading" role="tab" id="headingThree-3">
+												<div class="panel-icon">
+													<i class="fa fa-map-marker"></i>
+												</div>
+												<h4 class="panel-title">Yellowstone, USA</h4>
+												<ul class="hierarchy">
+													<li>North America</li>
+												</ul>
+											</div>
+										</a>
+									</div>
+									<!-- Guide Panel -->
+									<div class="panel panel-default" style="background-image: url('assets/images/destinations-21-960x540.jpg');">
+										<div id="collapseFour-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+											<div class="panel-body">
+												<div class="read-more">Details <i class="fa fa-arrow-right"></i></div>
+												<a href="guide-single.html"><div class="spacer"></div></a>
+											</div>
+										</div>
+										<a data-toggle="collapse" data-parent="#accordion-3" href="#collapseFour-3" aria-expanded="true" aria-controls="collapseFour-3">
+											<div class="panel-heading" role="tab" id="headingFour-3">
+												<div class="panel-icon">
+													<i class="fa fa-map-marker"></i>
+												</div>
+												<h4 class="panel-title">Foz do Iguacu, Brasil</h4>
+												<ul class="hierarchy">
+													<li>South America</li>
+												</ul>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<footer><a href="#">Find More &nbsp; <i class="fa fa-arrow-right"></i></a></footer>
+						</article> <!-- /.accordion-card -->
+					</div>
 
-</form>
+		        </div>
+		    </div>
+		</section>
+
+
+		<!-- Full Width Carousel
+		================================================== -->
+
+		<section class="featured-slider">
+
+			<h3 class="hidden">Highlights</h3>
+
+			<div class="featured-carousel">
+				<div class="item">
+					<div class="bg-img" style="background-image: url(assets/images/destination-1.jpg)"></div>
+					<div class="color-hue"></div>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12 col-md-6 col-md-offset-6">
+								<article>
+									<h3>Algarve, Portugal</h3>
+									<p class="lead">The Algarve is Portugal's most popular holiday destination....</p>
+									<a href="#" class="btn btn-primary">Read More &nbsp; <i class="fa fa-angle-right"></i></a>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="bg-img" style="background-image: url(assets/images/destination-2.jpg)"></div>
+					<div class="color-hue"></div>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12 col-md-6 col-md-offset-6">
+								<article>
+									<h3>London, England</h3>
+									<p class="lead">A truly multicultural, megalopolis of people, ideas and frenetic energy. London is divided into thirty-two boroughs, with unlimited opportunity for sightseeing. Packed with excellent ...</p>
+									<a href="#" class="btn btn-primary">Read More &nbsp; <i class="fa fa-angle-right"></i></a>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="bg-img" style="background-image: url(assets/images/destination-3.jpg)"></div>
+					<div class="color-hue"></div>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12 col-md-6 col-md-offset-6">
+								<article>
+									<h3>Scala dei Turchi, Italy</h3>
+									<p class="lead">Near southern Sicily, the Scala has become an attraction thanks to its unusual white color. Formed by a sedimentary rock with a distinct white color ...</p>
+									<a href="#" class="btn btn-primary">Read More &nbsp; <i class="fa fa-angle-right"></i></a>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="bg-img" style="background-image: url(assets/images/destination-4.jpg)"></div>
+					<div class="color-hue"></div>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12 col-md-6 col-md-offset-6">
+								<article>
+									<h3>South America</h3>
+									<p class="lead">Nestled between the Caribbean, the South Pacific, and the South Atlantic Oceans, South America is the wilder of the Americas, and a continent of superlatives...</p>
+									<a href="#" class="btn btn-primary">Read More &nbsp; <i class="fa fa-angle-right"></i></a>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="bg-img" style="background-image: url(assets/images/destination-5.jpg)"></div>
+					<div class="color-hue"></div>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12 col-md-6 col-md-offset-6">
+								<article>
+									<h3>North America</h3>
+									<p class="lead">North America consists of three large nations and one large island territory: Canada, United States of America, Mexico and Greenland...</p>
+									<a href="#" class="btn btn-primary">Read More &nbsp; <i class="fa fa-angle-right"></i></a>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+
+		<!-- Blog Posts
+		================================================== -->
+
+		<section class="regular blog-posts">
+			<div class="container">
+
+				<!-- Section Title -->
+				<div class="title-row">
+					<h3 class="title-entry">News Articles &amp; Blogs</h3>
+					<a href="blog.html" class="btn btn-primary btn-xs">Find More &nbsp; <i class="fa fa-angle-right"></i></a>
+				</div>
+
+				<div class="row">
+
+					<div class="col-md-3 col-sm-6">
+						<article class="post">
+							<div class="card">
+								<header class="entry-header">
+									<a href="single-hero.html">
+										<div class="entry-thumbnail" style="background-image: url('assets/images/blog-5-600x800.jpg')">
+											<img alt="" title="" src="assets/images/blog-placeholder-vertical.png" width="600" height="800">
+										</div>
+										<h2 class="entry-title">Living the Travel Lifestyle</h2>
+									</a>
+								</header>
+								<footer class="entry-meta clearfix">
+									<span class="byline"><i class="fa fa-user"></i> <span class="author vcard"><a class="url fn n" href="#">Author Name</a></span></span>
+									<span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2014-11-12T00:15:40+00:00">11/12/2014</time></a></span>
+								</footer>
+							</div>
+							<!-- SAMPLE EXCERPT CONTENT
+							===============================
+								<div class="entry-content">
+										<p>Fusce egestas elit eget lorem. Viva mus eleme ntum semper nisi. Duis leo. Suspen disse pulvinar, augue ac venen hatis cond imentum, sem libero volut pat nibh, nec pellen tesque velit pede quis nunc. Morbi mattis ullam corper velit. Proin pretium, leo ac pellen tesque mollis, felis nunc ultrices eros, sed gravida augue augue mollis justo.<br>
+										<a href="#" class="more-link btn btn-sm btn-primary">Continue reading <span class="meta-nav">→</span></a></p>
+									</div>
+								-->
+						</article>
+					</div>
+
+					<div class="col-md-3 col-sm-6">
+						<article class="post">
+							<div class="card">
+								<header class="entry-header">
+									<a href="single-hero.html">
+										<div class="entry-thumbnail" style="background-image: url('assets/images/blog-4-600x800.jpg')">
+											<img src="assets/images/blog-placeholder-vertical.png" alt="" title="" width="600" height="800">
+										</div>
+										<h2 class="entry-title">Choosing Your Next Vacation Destination</h2>
+									</a>
+								</header>
+								<footer class="entry-meta clearfix">
+									<span class="byline"><i class="fa fa-user"></i> <span class="author vcard"><a class="url fn n" href="#">Author Name</a></span></span>
+									<span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2014-11-12T00:15:40+00:00">11/12/2014</time></a></span>
+								</footer>
+							</div>
+							<!-- SAMPLE EXCERPT CONTENT
+							===============================
+							<div class="entry-content">
+									<p>Fusce egestas elit eget lorem. Viva mus eleme ntum semper nisi. Duis leo. Suspen disse pulvinar, augue ac venen hatis cond imentum, sem libero volut pat nibh, nec pellen tesque velit pede quis nunc. Morbi mattis ullam corper velit. Proin pretium, leo ac pellen tesque mollis, felis nunc ultrices eros, sed gravida augue augue mollis justo.<br>
+									<a href="#" class="more-link btn btn-sm btn-primary">Continue reading <span class="meta-nav">→</span></a></p>
+								</div>
+							-->
+						</article>
+					</div>
+
+					<div class="col-md-3 col-sm-6">
+						<article class="post">
+							<div class="card">
+								<header class="entry-header">
+									<a href="single-hero.html">
+										<div class="entry-thumbnail" style="background-image: url('assets/images/blog-1-600x800.jpg');">
+											<img src="assets/images/blog-placeholder-vertical.png" alt="" title="" width="600" height="800">
+										</div>
+										<h2 class="entry-title">Unusual Places to Consider Visiting</h2>
+									</a>
+								</header>
+								<footer class="entry-meta clearfix">
+									<span class="byline"><i class="fa fa-user"></i> <span class="author vcard"><a class="url fn n" href="#">Author Name</a></span></span>
+									<span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2014-11-12T00:15:40+00:00">11/12/2014</time></a></span>
+								</footer>
+							</div>
+							<!-- SAMPLE EXCERPT CONTENT
+							===============================
+							<div class="entry-content">
+									<p>Fusce egestas elit eget lorem. Viva mus eleme ntum semper nisi. Duis leo. Suspen disse pulvinar, augue ac venen hatis cond imentum, sem libero volut pat nibh, nec pellen tesque velit pede quis nunc. Morbi mattis ullam corper velit. Proin pretium, leo ac pellen tesque mollis, felis nunc ultrices eros, sed gravida augue augue mollis justo.<br>
+									<a href="#" class="more-link btn btn-sm btn-primary">Continue reading <span class="meta-nav">→</span></a></p>
+								</div>
+							-->
+						</article>
+					</div>
+
+					<div class="col-md-3 col-sm-6">
+						<article class="post">
+							<div class="card">
+								<header class="entry-header">
+									<a href="single-hero.html">
+										<div class="entry-thumbnail" style="background-image: url('assets/images/blog-3-600x800.jpg');">
+											<img src="assets/images/blog-placeholder-vertical.png" alt="" title="" width="600" height="800">
+										</div>
+										<h2 class="entry-title">8 Useful Tools for Planning a Great Trip</h2>
+									</a>
+								</header>
+								<footer class="entry-meta clearfix">
+									<span class="byline"><i class="fa fa-user"></i> <span class="author vcard"><a class="url fn n" href="#">Author Name</a></span></span>
+									<span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2014-11-12T00:15:40+00:00">11/12/2014</time></a></span>
+								</footer>
+							</div>
+							<!-- SAMPLE EXCERPT CONTENT
+							===============================
+								<div class="entry-content">
+										<p>Fusce egestas elit eget lorem. Viva mus eleme ntum semper nisi. Duis leo. Suspen disse pulvinar, augue ac venen hatis cond imentum, sem libero volut pat nibh, nec pellen tesque velit pede quis nunc. Morbi mattis ullam corper velit. Proin pretium, leo ac pellen tesque mollis, felis nunc ultrices eros, sed gravida augue augue mollis justo.<br>
+										<a href="#" class="more-link btn btn-sm btn-primary">Continue reading <span class="meta-nav">→</span></a></p>
+									</div>
+								-->
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+
 
 		<!-- Footer
 		================================================== -->
@@ -701,26 +778,34 @@ alert(msg);
 			<section class="top-footer regular">
 				<div class="container">
 					<div class="row">
+
 						<h3 class="hidden">More Resources</h3>
+
 						<div class="col-lg-9">
 							<div class="footer-content-left">
+
 								<p style="font-size:14px; color:#aaa;">
-									<a href="page.html">About Us</a> &nbsp; | &nbsp;
-									<a href="login.html">Sign in</a> &nbsp; | &nbsp;
+									<a href="about">About Us</a> &nbsp; | &nbsp;
+									<a href="auth">Sign in</a> &nbsp; | &nbsp;
 									<a href="cover-with-page-content.html">Be an Explorer!</a> &nbsp; | &nbsp;
 									<a href="destinations.html">Destinations</a> &nbsp; | &nbsp;
 									<a href="blog.html">Blog</a> &nbsp; | &nbsp;
-									<a href="contact.html">Contact us</a>
+									<a href="contact">Contact us</a>
 								</p>
 
-								
+								<p style="font-size:14px; color: #999; margin-bottom:0;">
+									<strong>An HTML travel template for destinations, guides, blogs, hotels, resorts, tours, vacations, events, and more for a perfect travel experience!</strong>
+
+									<br>Created by <a href="http://para.llel.us" target="_blank">Parallelus</a> and available for purchase on <a href="http://para.llel.us/+/get-goexplore-html" target="_blank">ThemeForest</a>.
+								</p>
+
 							</div>
 						</div>
 
 						<div class="col-lg-3">
 							<div class="footer-content-right">
 								<div style="text-align: right;" class="visible-lg-block">
-									<img src="{{ asset('assets/images/Spadli-logobeta-1.png') }}" alt="Spadli" width="1024" height="565" style="max-width: 175px;">
+									<img src="assets/images/logo-symbol-complex-colors.png" alt="GoExplore!" width="1024" height="565" style="max-width: 175px;">
 								</div>
 							</div>
 						</div>
@@ -735,290 +820,29 @@ alert(msg);
 						<h3 class="hidden">About</h3>
 
 						<div class="col-xs-12">
-							
-							<span style="color:#999; font-size: 13px;">&copy; 2017 Spadli | Terms of Use and Privacy Policy.</span>
+							<span style="color:#999; font-size: 15px;" class="pull-right">
+								<a href="http://para.llel.us/+/get-goexplore-html" target="_blank" class="text-info" style="text-decoration:none;">
+									<strong><i class="fa fa-download"></i> &nbsp; Download GoExplore!</strong>
+								</a>
+							</span>
+
+							<span style="color:#999; font-size: 13px;">&copy; 2015 Parallelus | GoExplore! HTML Travel Template. Terms of Use and Privacy Policy.</span>
 						</div>
 					</div>
 				</div>
 			</section>
 		</footer>
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/owl.carousel.min.js"></script>
+		<script src="assets/js/custom.js"></script>
+	</body>
+</html>
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.16&language=en"></script>
-<script src="https://dj1ec046erlmc.cloudfront.net/j/lib/json-template.96bdeede1f07.js"></script>
-<script src="https://dj1ec046erlmc.cloudfront.net/j/lib.0fa2a331300c.js" charset="utf-8"></script>
-<script src="https://dj1ec046erlmc.cloudfront.net/j/lib/apprise.a567cf97d94d.js"></script>
-<script>
-$(document).ready(function(){
-    $(".add-comment-btn").on("click",function(){
-        if($("#comment-data").val()){
-            $.ajax({
-                url: "save_comment.php",
-                dataType : "json",
-                data: {"comment": $("#comment-data").val()},
-                type: 'POST',
-                success: function(result){
-                    if(result.success){
-                        var commentBox = $(".comment-list-clone").clone();
-                        commentBox.removeClass("hidden");
-                        commentBox.removeClass("comment-list-clone");
-                        commentBox.find(".comment-box-text").text($("#comment-data").val())
-                        commentBox.find(".comment-box-time").text(result.time);
-                        console.log(commentBox);
-                        $(".comment-box-data").prepend(commentBox);
-                    }
-                }
-            });
-        }
-    });  
-    
-    $(".fa-exchange").on("click", function() {
-        var clicked_one = $(this).parent().parent().parent().attr("data-id");
-        var data_box = '';
-        var first_div = '';
-        $(".main-box-list").find(".col-md-3").each(function() {
-            var clone = $(this).clone();
-            clone.find(".fa-exchange").remove();
-            if (clicked_one == $(this).attr("data-id")) {
-                first_div = clone.html();
-            } else {
-                data_box += clone.html();
-            }
-        });
-        $("#div-exchange-model").find(".overlap").html(first_div + data_box);
-        $("#div-exchange-model").addClass("in");
-        $("#div-exchange-model").addClass("show-modal");
-        $(".home").addClass("overflow-hidden");
-        $("#div-exchange-model").show("modal");
-        $("#div-exchange-model").css("display","block");
-    });
-    $(".comment-popup").on("click",function(){
-        var bg = $(this).parent().parent().parent().parent().parent().find(".featured-image").css('background-image');
-        bg = bg.replace('url(','').replace(')','').replace(/\"/gi, "");
-        $("#myModal .image-box img").attr("src",bg);
-        $("#myModal").modal();
-    });
-    $(".report-post").on("click",function(){
-       $("#report-post-modal").modal(); 
-    });
-});
-/*
-var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) 
-{
-  if (event.target == modal) 
-  {
-    modal.style.display = "none";
-  }
-}
-*/
-    (function () 
-    {
-        var everplaces = {};
-        everplaces.me = eval();
-        everplaces.user = everplaces.me;
-        everplaces.collections = eval();
-        everplaces.categories = eval();
-        if(everplaces.me !== undefined && everplaces.user.username === everplaces.me.username){
-            everplaces._private = true;
-        }
-        else
-        {
-            everplaces._private = false;
-        }
 
-        window.everplaces = everplaces;
-    }());
-
-    window.options = {
-        more_pages: true,
-        el: $("#explore-con-close"),
-    }
-    $().ready(function () 
-    {
-
-        /*Feature bg slides*/
-        var z = 700;
-        var looptimemsecs = 5000;
-        var fademsecs = 800;
-        function changebg() 
-        {
-            var s = $("#bgslides ul li").eq(0);
-            
-            $('#bgslides ul li').eq(1).css('display', 'list-item').css('#', );
-            $('#bgslides ul li').eq(0).fadeOut(fademsecs, function () {
-                setTimeout(changebg, looptimemsecs);
-                s.css('display', 'none');
-            });
-            $("#bgslides ul").append(s);
-        }
-        setTimeout(changebg, looptimemsecs);
-    });
-</script>
-<script src="https://dj1ec046erlmc.cloudfront.net/j/app/entries/explore.lib.dcd9d760f4de.js"></script>
-<script src="https://dj1ec046erlmc.cloudfront.net/j/forms.3e9716f6dc3c.js"></script>
-<script src="https://dj1ec046erlmc.cloudfront.net/j/m.db51ff907123.js"></script>
-<script src="https://dj1ec046erlmc.cloudfront.net/j/app/entries/places_global.lib.2d0aa2519ff4.js"></script>
-<script src="https://dj1ec046erlmc.cloudfront.net/j/app/entries/friends_global.lib.58d637be7c6d.js"></script>
-
-<script type="text/javascript">
-    var analytics_url = ''
-</script>
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-21691368-8']);
-    _gaq.push(['_setDomainName', 'everplaces.com']);
-    _gaq.push(['_setCustomVar', 1, 'User Type', 'Visitor', 2]);
-    if(document.getElementById("js-hotel-referral")!=null)
-    {
-        _gaq.push(['_setCustomVar', 2, 'Referral page', 'Hotel referral', 3]);
-    }
-    if (analytics_url) 
-    {
-        _gaq.push(['_trackPageview', analytics_url]);
-    } else 
-    {
-        _gaq.push(['_trackPageview']);
-    };
-    (function() 
-    {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
-</script>
-<script>
-$(document).ready(function()
-{
-    $(".heart-unclicked").on("click",function(){
-        if($(this).hasClass("heart-clicked")){
-            $(this).removeClass("heart-clicked");
-            $(this).text(parseInt($(this).text()) - 1);
-        }else{
-            $(this).addClass("heart-clicked");
-            $(this).text(parseInt($(this).text()) + 1);
-        }
-    });
-  $(".open-list").on("click",function()
-  {
-     if($(this).parent().parent().find(".share-list .popup-content").css("visibility") == "hidden"){
-        $(this).parent().parent().find(".share-list .popup-content").css("visibility","visible");      
-     }else{
-        $(this).parent().parent().find(".share-list .popup-content").css("visibility","hidden"); 
-     }
-  });
-  $(".social-share-list").on("click",function()
-  {
-	$(this).parent().parent().css("visibility","hidden");
-	$(this).parent().parent().parent().parent().find(".social-media .popup-content1").css("visibility","visible");
-  });
-  $(".social-share-list2").on("click",function()
-  {
-	$(this).parent().parent().css("visibility","hidden");
-	$(this).parent().parent().parent().parent().find(".social-media-follow  .popup-content2" ).css("visibility","visible");
-  });
-  $(".like-list").on("click",function()
-  {
-	$(this).parent().parent().css("visibility","hidden");
-	$(this).parent().parent().parent().parent().find(".media-like .media-popup").css("visibility","visible");
-  });
-  $(".report").on("click",function()
-  {
-	$(this).parent().parent().css("visibility","hidden");
-	$(this).parent().parent().parent().parent().find(".report-content .report1").css("visibility","visible");
-  });
-   $(".close").on("click",function()
-   {
-		$(this).parent().parent().css("visibility","hidden");
-	});
-  /* 1. Visualizing things on Hover - See next part for action on click */
-  $('#stars li').on('mouseover', function(){
-    var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
-    // Now highlight all the stars that's not after the current hovered star
-    $(this).parent().children('li.star').each(function(e)
-    {
-      if (e < onStar) 
-      {
-        $(this).addClass('hover');
-      }
-      else 
-      {
-        $(this).removeClass('hover');
-      }
-    });
-  }).on('mouseout', function()
-  {
-    $(this).parent().children('li.star').each(function(e)
-    {
-      $(this).removeClass('hover');
-    });
-  });
-                            /* 2. Action to perform on click */
-  $('#stars li').on('click', function()
-  {
-    var onStar = parseInt($(this).data('value'), 10); 
-    // The star currently selected
-    var stars = $(this).parent().children('li.star');
-    for (i = 0; i < stars.length; i++) 
-    {
-      $(stars[i]).removeClass('selected');
-    }
-    for (i = 0; i < onStar; i++) 
-    {
-      $(stars[i]).addClass('selected');
-    }
-    
-                    // JUST RESPONSE (Not needed)
-    var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
-    var msg = "";
-    if (ratingValue > 1) 
-    {
-        msg = "Thanks! You rated this " + ratingValue + " stars.";
-    }
-    else 
-    {
-        msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
-    }
-    responseMessage(msg);
-  });
-  
-});
-function responseMessage(msg) 
-{
-  $('.success-box').fadeIn(200);  
-  $('.success-box div.text-message').html("<span>" + msg + "</span>");
-}
-</script>
-<script>
-function myFunction() 
-{
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
-}
-</script>
-
-<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5dea9980b027a300123134f9&product=inline-share-buttons" async="async">
-</script>
-</body>
-</html> 
-</div>
