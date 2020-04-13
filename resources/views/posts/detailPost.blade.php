@@ -52,12 +52,11 @@
 							<li class="dropdown show-on-hover">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-share-alt"></i></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="#"><i class="fa fa-fw fa-facebook-official"></i> Facebook</a></li>
-									<li><a href="#"><i class="fa fa-fw fa-twitter"></i> Twitter</a></li>
-									<li><a href="#"><i class="fa fa-fw fa-google-plus"></i> Google +</a></li>
-									<li><a href="#"><i class="fa fa-fw fa-pinterest"></i> Pinterest</a></li>
-									<li><a href="#"><i class="fa fa-fw fa-instagram"></i> Instagram</a></li>
-									<li><a href="#"><i class="fa fa-fw fa-envelope"></i> Email</a></li>
+									<li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ Request::url() }}"><i class="fa fa-fw fa-facebook-official"></i> Facebook</a></li>
+									<li><a target="_blank" href="http://twitter.com/share?text={{ $post->title }}&url={{ Request::url() }}"><i class="fa fa-fw fa-twitter"></i> Twitter</a></li>
+									<li><a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ Request::url() }}&amp;title={{ $post->title }}&amp;summary={{ $post->short_description }}"><i class="fa fa-fw fa-linkedin"></i> Linkedin</a></li>
+									<li><a target="_blank" href="#"><i class="fa fa-fw fa-pinterest"></i> Pinterest</a></li>
+									<li><a target="_blank" href="https://wa.me/?text={{ Request::url() }}"><i class="fa fa-fw fa-whatsapp"></i> Whatsapp</a></li>
 								</ul>
 							</li>
 							<li><a href="#" data-toggle="tooltip" title="Download in PDF format."><i class="fa fa-fw fa-file-pdf-o"></i></a></li>
@@ -99,7 +98,7 @@
 								<div class="entry-content" style="padding-top: 25px;">
 									<p> {!! $post->description !!} </p>
                                 </div>
-                                
+
 
                                 <div id="comments" class="comments-area">
 							<header class="page-header">
@@ -112,7 +111,7 @@
 											<div class="media-body-wrap panel panel-default">
 												<div class="panel-heading clearfix">
 													{{-- <a class="pull-left" href="#"> <img src="assets/images/user-1.jpg" width="50" height="50" alt="Mason" class="avatar alignnone photo"> </a> --}}
-													
+
 													<h5 class="media-heading">
 														<cite class="fn">{{ $comment->author }}</cite> <span class="says">says:</span>
 													</h5>
@@ -195,7 +194,7 @@
 
         <section class="narrow blog-posts-alt">
             <div class="title-row" style="padding-left: 10%;">
-                <h3 class="title-entry">Posts</h3> 
+                <h3 class="title-entry">Posts</h3>
             </div>
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1">
@@ -205,7 +204,7 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <a href="{{ route('post-detail', [$post2->id]) }}" rel="bookmark">
-                                        <div class="entry-thumbnail card"> 
+                                        <div class="entry-thumbnail card">
                                             <img style="width:600px; height:250px;" src="{{ asset('uploads/' . $post2->gallery) }}" alt="">
                                         </div>
                                     </a>
@@ -218,7 +217,7 @@
                                         </div>
                                     </header>
                                     <div class="entry-content">
-                                        <p>{!! strlen($post2->description) < 250 ? $post2->description : (substr($post2->description, 0, 250) . '...') !!}</p> 
+                                        <p>{!! strlen($post2->description) < 250 ? $post2->description : (substr($post2->description, 0, 250) . '...') !!}</p>
                                         <a href="{{ route('post-detail', [$post2->id])  }}" class="more-link btn btn-sm btn-primary">Continue reading <span class="meta-nav"> &nbsp; <i class="fa fa-arrow-right"></i></span></a></div>
                                 </div>
                             </div>
