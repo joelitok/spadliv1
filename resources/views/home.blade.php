@@ -193,18 +193,19 @@
 
 		<!-- Home Page Search Section
 		================================================== -->
-		<section class="regular">
+	
+   	<section class="regular">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 col-lg-4">
 						<figure style="text-align:center">
-							<img src="assets/images/logo-symbol-complex-colors.png" alt="GoExplore!" width="387" height="214">
+						<img src="{{ asset('front/assets/images/spadli-logobeta.png') }}" alt="Spadli" height="400">
 						</figure>
 					</div>
 					<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-0">
 
 						<div class="col-md-12 col-lg-10 col-lg-offset-1">
-							<h3 style="text-align: center;">Be more than just another traveler when you <em>GoExplore!</em></h3>
+							<h3 style="text-align: center;"> so your search another post here <em>Spadli!</em></h3>
 						</div>
 						<div class="col-sm-12">
 							<form class="big-search">
@@ -214,19 +215,21 @@
 						</div>
 
 					</div>
-				</div> <!-- /.row -->
-			</div> <!-- /.container -->
-		</section>
+				</div> 
+			</div> 
+
+		</section> 
 
 
 		<!-- Home Page Accordion Section
 		================================================== -->
-		<section class="regular background">
+ <!--	<section class="regular background"> 	
+
 			<div class="container">
 				<div class="row">
 
 					<h3 class="hidden">Destination Categories</h3>
-
+               
 					<div class="col-md-6 col-lg-4">
 						<article class="card accordion-card">
 							<header>
@@ -239,7 +242,7 @@
 
 							<div class="accordion-panel">
 								<div class="panel-group" id="accordion-1" role="tablist" aria-multiselectable="true">
-									<!-- Guide Panel -->
+									
 									<div class="panel panel-default" style="background-image: url('assets/images/destinations-20-960x540.jpg');">
 										<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 											<div class="panel-body">
@@ -259,7 +262,8 @@
 											</div>
 										</a>
 									</div>
-									<!-- Guide Panel -->
+									
+
 									<div class="panel panel-default" style="background-image: url('assets/images/destinations-11-960x540.jpg');">
 										<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 											<div class="panel-body">
@@ -279,7 +283,7 @@
 											</div>
 										</a>
 									</div>
-									<!-- Guide Panel -->
+									
 									<div class="panel panel-default" style="background-image: url('assets/images/destinations-10-960x540.jpg');">
 										<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 											<div class="panel-body">
@@ -302,9 +306,10 @@
 								</div>
 							</div>
 							<footer><a href="#">Find More &nbsp; <i class="fa fa-arrow-right"></i></a></footer>
-						</article> <!-- /.accordion-card -->
+						</article>
 					</div>
-
+                    -->
+<!--
 					<div class="col-md-6 col-lg-4">
 						<article class="card accordion-card">
 							<header>
@@ -313,7 +318,8 @@
 							</header>
 							<div class="accordion-panel">
 								<div class="panel-group" id="accordion-2" role="tablist" aria-multiselectable="true">
-									<!-- Guide Panel -->
+									
+
 									<div class="panel panel-default" style="background-image: url('assets/images/destinations-14-960x540.jpg');">
 										<div id="collapseOne-2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 											<div class="panel-body">
@@ -333,7 +339,7 @@
 											</div>
 										</a>
 									</div>
-									<!-- Guide Panel -->
+								
 									<div class="panel panel-default" style="background-image: url('assets/images/destinations-13-960x540.jpg');">
 										<div id="collapseTwo-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo-2">
 											<div class="panel-body">
@@ -353,7 +359,7 @@
 											</div>
 										</a>
 									</div>
-									<!-- Guide Panel -->
+									
 									<div class="panel panel-default" style="background-image: url('assets/images/destinations-5-960x540.jpg');">
 										<div id="collapseThree-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 											<div class="panel-body">
@@ -376,9 +382,10 @@
 								</div>
 							</div>
 							<footer><a href="#">Find More &nbsp; <i class="fa fa-arrow-right"></i></a></footer>
-						</article> <!-- /.accordion-card -->
+						</article>
 					</div>
-
+                     -->
+<!--
 					<div class="col-md-12 col-lg-4">
 						<article class="card accordion-card">
 							<header>
@@ -387,7 +394,7 @@
 							</header>
 							<div class="accordion-panel">
 								<div class="panel-group" id="accordion-3" role="tablist" aria-multiselectable="true">
-									<!-- Guide Panel -->
+									
 									<div class="panel panel-default" style="background-image: url('assets/images/destinations-22-960x540.jpg');">
 										<div id="collapseOne-3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 											<div class="panel-body">
@@ -407,7 +414,7 @@
 											</div>
 										</a>
 									</div>
-									<!-- Guide Panel -->
+								
 									<div class="panel panel-default" style="background-image: url('assets/images/destinations-19-960x540.jpg');">
 										<div id="collapseThree-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 											<div class="panel-body">
@@ -427,7 +434,7 @@
 											</div>
 										</a>
 									</div>
-									<!-- Guide Panel -->
+								
 									<div class="panel panel-default" style="background-image: url('assets/images/destinations-21-960x540.jpg');">
 										<div id="collapseFour-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 											<div class="panel-body">
@@ -450,18 +457,20 @@
 								</div>
 							</div>
 							<footer><a href="#">Find More &nbsp; <i class="fa fa-arrow-right"></i></a></footer>
-						</article> <!-- /.accordion-card -->
-					</div>
+						</article> 
+					</div>  -->
 
+<!--
 		        </div>
 		    </div>
 		</section>
 
+         -->
+
 
 		<!-- Full Width Carousel
 		================================================== -->
-
-		<section class="featured-slider">
+<!-- <section class="featured-slider">
 
 			<h3 class="hidden">Highlights</h3>
 
@@ -547,6 +556,7 @@
 			</div>
 		</section>
 
+		-->
 
 		<!-- Blog Posts
 		================================================== -->
@@ -555,7 +565,7 @@
 			<div class="container">
 
 				<!-- Section Title -->
-				<div class="title-row">
+			<!--	<div class="title-row">
 					<h3 class="title-entry">News Articles &amp; Blogs</h3>
 					<a href="blog.html" class="btn btn-primary btn-xs">Find More &nbsp; <i class="fa fa-angle-right"></i></a>
 				</div>
@@ -578,17 +588,13 @@
 									<span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2014-11-12T00:15:40+00:00">11/12/2014</time></a></span>
 								</footer>
 							</div>
-							<!-- SAMPLE EXCERPT CONTENT
-							===============================
-								<div class="entry-content">
-										<p>Fusce egestas elit eget lorem. Viva mus eleme ntum semper nisi. Duis leo. Suspen disse pulvinar, augue ac venen hatis cond imentum, sem libero volut pat nibh, nec pellen tesque velit pede quis nunc. Morbi mattis ullam corper velit. Proin pretium, leo ac pellen tesque mollis, felis nunc ultrices eros, sed gravida augue augue mollis justo.<br>
-										<a href="#" class="more-link btn btn-sm btn-primary">Continue reading <span class="meta-nav">→</span></a></p>
-									</div>
-								-->
-						</article>
-					</div>
+							
+							 
+							
+						</article>  
+					</div> -->
 
-					<div class="col-md-3 col-sm-6">
+				<!--	<div class="col-md-3 col-sm-6">
 						<article class="post">
 							<div class="card">
 								<header class="entry-header">
@@ -603,17 +609,16 @@
 									<span class="byline"><i class="fa fa-user"></i> <span class="author vcard"><a class="url fn n" href="#">Author Name</a></span></span>
 									<span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2014-11-12T00:15:40+00:00">11/12/2014</time></a></span>
 								</footer>
-							</div>
-							<!-- SAMPLE EXCERPT CONTENT
-							===============================
-							<div class="entry-content">
-									<p>Fusce egestas elit eget lorem. Viva mus eleme ntum semper nisi. Duis leo. Suspen disse pulvinar, augue ac venen hatis cond imentum, sem libero volut pat nibh, nec pellen tesque velit pede quis nunc. Morbi mattis ullam corper velit. Proin pretium, leo ac pellen tesque mollis, felis nunc ultrices eros, sed gravida augue augue mollis justo.<br>
-									<a href="#" class="more-link btn btn-sm btn-primary">Continue reading <span class="meta-nav">→</span></a></p>
-								</div>
-							-->
-						</article>
+							</div>   
+							
+							
+							
+						</article> 
 					</div>
+ -->
 
+
+<!-- 
 					<div class="col-md-3 col-sm-6">
 						<article class="post">
 							<div class="card">
@@ -630,16 +635,12 @@
 									<span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2014-11-12T00:15:40+00:00">11/12/2014</time></a></span>
 								</footer>
 							</div>
-							<!-- SAMPLE EXCERPT CONTENT
-							===============================
-							<div class="entry-content">
-									<p>Fusce egestas elit eget lorem. Viva mus eleme ntum semper nisi. Duis leo. Suspen disse pulvinar, augue ac venen hatis cond imentum, sem libero volut pat nibh, nec pellen tesque velit pede quis nunc. Morbi mattis ullam corper velit. Proin pretium, leo ac pellen tesque mollis, felis nunc ultrices eros, sed gravida augue augue mollis justo.<br>
-									<a href="#" class="more-link btn btn-sm btn-primary">Continue reading <span class="meta-nav">→</span></a></p>
-								</div>
-							-->
+						
 						</article>
 					</div>
+-->
 
+ <!--
 					<div class="col-md-3 col-sm-6">
 						<article class="post">
 							<div class="card">
@@ -656,15 +657,11 @@
 									<span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2014-11-12T00:15:40+00:00">11/12/2014</time></a></span>
 								</footer>
 							</div>
-							<!-- SAMPLE EXCERPT CONTENT
-							===============================
-								<div class="entry-content">
-										<p>Fusce egestas elit eget lorem. Viva mus eleme ntum semper nisi. Duis leo. Suspen disse pulvinar, augue ac venen hatis cond imentum, sem libero volut pat nibh, nec pellen tesque velit pede quis nunc. Morbi mattis ullam corper velit. Proin pretium, leo ac pellen tesque mollis, felis nunc ultrices eros, sed gravida augue augue mollis justo.<br>
-										<a href="#" class="more-link btn btn-sm btn-primary">Continue reading <span class="meta-nav">→</span></a></p>
-									</div>
-								-->
+							
 						</article>
 					</div>
+
+                    -->
 				</div>
 			</div>
 		</section>

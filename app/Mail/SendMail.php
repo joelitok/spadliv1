@@ -31,7 +31,7 @@ class SendMail extends Mailable
     public function build()
     {
        // return $this->view('view.name');
- return $this->from('joelpnkouatchet@gmail.com')->subject('New Customer Equiry')->view('emails.comfirmMessage')->with('data', $this->data);
+      return $this->from('joelpnkouatchet@gmail.com')->subject('New Customer Equiry')->view('posts.dynamicEmailTemplate')->with('data', $this->data);
     
     }
 }

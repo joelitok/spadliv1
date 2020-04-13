@@ -241,7 +241,7 @@ class PostController extends Controller
             abort(404);
         }
 
-        $posts = Post::/*where('id', '<>', $id)->*/latest()->limit(3)->get();
+        $posts = Post::where('id', '<>', $id)->latest()->limit(3)->get();
 
         $listings = Listing::all();
         $categories = Category::all();

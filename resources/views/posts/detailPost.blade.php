@@ -112,6 +112,7 @@
 											<div class="media-body-wrap panel panel-default">
 												<div class="panel-heading clearfix">
 													{{-- <a class="pull-left" href="#"> <img src="assets/images/user-1.jpg" width="50" height="50" alt="Mason" class="avatar alignnone photo"> </a> --}}
+													
 													<h5 class="media-heading">
 														<cite class="fn">{{ $comment->author }}</cite> <span class="says">says:</span>
 													</h5>
@@ -217,7 +218,7 @@
                                         </div>
                                     </header>
                                     <div class="entry-content">
-                                        <p>{{ strlen($post2->description) < 250 ? $post2->description : substr($post2->description, 0, 250) . '...' }}</p> 
+                                        <p>{!! strlen($post2->description) < 250 ? $post2->description : (substr($post2->description, 0, 250) . '...') !!}</p> 
                                         <a href="{{ route('post-detail', [$post2->id])  }}" class="more-link btn btn-sm btn-primary">Continue reading <span class="meta-nav"> &nbsp; <i class="fa fa-arrow-right"></i></span></a></div>
                                 </div>
                             </div>

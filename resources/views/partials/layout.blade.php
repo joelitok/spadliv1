@@ -36,7 +36,7 @@
 				<div class="navbar-extra-top clearfix">
 					<div class="navbar container-fluid">
 						<ul class="nav navbar-nav navbar-left">
-							<li class="menu-item"><a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a></li>
+							<li class="menu-item"><a href="contact"><i class="fa fa-envelope"></i> Contact Us</a></li>
 							<li class="menu-item"><a href="#"><i class="fa fa-suitcase"></i> Join the Explorers!</a></li>
 							<li class="menu-item"><a href="auth"><i class="fa fa-sign-in"></i> Sign in</a></li>
 						</ul>

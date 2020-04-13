@@ -8,13 +8,8 @@ use App\Mail\SendMail;
 
 class SendEmailController extends Controller
 {
-    //
-    function index()
-    {
-     return view('home');
-    }
-
- function send(Request $request)
+  
+function send(Request $request)
     {
      $this->validate($request, [
       'name'     =>  'required',
@@ -28,8 +23,15 @@ class SendEmailController extends Controller
         );
 
      Mail::to('joelnkouatchet@gmail.com')->send(new SendMail($data));
-     return back()->with('alert', 'Thanks for contacting us!');
+
+    return redirect('home')->with('success', 'Thanks for contacting us!');
 
     }
 
+function contact(){
+return view('posts.contactUs');
 }
+
+}
+
+
