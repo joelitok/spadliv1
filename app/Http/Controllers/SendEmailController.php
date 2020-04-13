@@ -22,7 +22,7 @@ function send(Request $request)
             'message'   =>   $request->message
         );
 
-     Mail::to('joelnkouatchet@gmail.com')->send(new SendMail($data));
+     Mail::to( env('MAIL_USERNAME') )->send(new SendMail($data));
 
     return redirect('home')->with('success', 'Thanks for contacting us!');
 
