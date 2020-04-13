@@ -7,9 +7,11 @@
 </head>
 <body>
 
-<p>Hi, This is {{ $data['name'] }}</p>
-<p>I have some query like {{ $data['message'] }}.</p>
-<p>It would be appriciative, if you gone through this feedback.</p>
+    <h3>We have new Message</h3>
+    <p>Name: {{ $data['name'] }}</p>
+    <p>E-mail: {{ $data['email'] }}</p>
+    <p>Message: </p>
+    <p>{{ $data['message'] }}.</p>
 
 </body>
 </html>
