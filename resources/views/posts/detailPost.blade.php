@@ -52,11 +52,17 @@
 							<li class="dropdown show-on-hover">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-share-alt"></i></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ Request::url() }}"><i class="fa fa-fw fa-facebook-official"></i> Facebook</a></li>
-									<li><a target="_blank" href="http://twitter.com/share?text={{ $post->title }}&url={{ Request::url() }}"><i class="fa fa-fw fa-twitter"></i> Twitter</a></li>
-									<li><a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ Request::url() }}&amp;title={{ $post->title }}&amp;summary={{ $post->short_description }}"><i class="fa fa-fw fa-linkedin"></i> Linkedin</a></li>
-									<li><a target="_blank" href="#"><i class="fa fa-fw fa-pinterest"></i> Pinterest</a></li>
-									<li><a target="_blank" href="https://wa.me/?text={{ Request::url() }}"><i class="fa fa-fw fa-whatsapp"></i> Whatsapp</a></li>
+                                    <li>
+                                        <a href="#" target="https://www.facebook.com/sharer/sharer.php?u={{ Request::url() }}" onclick="window.open(this.target, 'Share {{ $post->title }}','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
+                                            <i class="fa fa-fw fa-facebook-official"></i> Facebook
+                                        </a>
+                                    </li>
+                                    <li><a href="#" target="http://twitter.com/share?text={{ $post->title }}&url={{ Request::url() }}">
+                                        <i class="fa fa-fw fa-twitter"></i> Twitter</a>
+                                    </li>
+									<li><a href="#" target="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ Request::url() }}&amp;title={{ $post->title }}&amp;summary={{ $post->short_description }}"><i class="fa fa-fw fa-linkedin"></i> Linkedin</a></li>
+									<li><a href="#" target="#"><i class="fa fa-fw fa-pinterest"></i> Pinterest</a></li>
+									<li><a href="#" target="https://wa.me/?text={{ Request::url() }}"><i class="fa fa-fw fa-whatsapp"></i> Whatsapp</a></li>
 								</ul>
 							</li>
 							<li><a href="#" data-toggle="tooltip" title="Download in PDF format."><i class="fa fa-fw fa-file-pdf-o"></i></a></li>
